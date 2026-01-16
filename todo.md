@@ -35,3 +35,8 @@
 ## Testes
 - [x] Criar testes unitários para backend
 - [x] Validar funcionalidades principais
+
+## Reorganização da Interface
+- [x] Reorganizar página Home para mostrar semanas diretamente
+- [x] Mostrar conteúdos de cada semana na mesma página
+- [x] Remover navegação por módulos intermediária

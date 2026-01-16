@@ -4,6 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
+import { getAllWeeksWithContents } from "./content-helpers";
 
 export const appRouter = router({
   system: systemRouter,
@@ -46,7 +47,12 @@ export const appRouter = router({
 
   // ============= WEEKS =============
   weeks: router({
-    listByModule: publicProcedure
+    listAllWithContents: publicProcedure.query(async ({ ctx }) => {
+      const userId = ctx.user?.id;
+      return await getAllWeeksWithContents(userId);
+    }),
+    
+listByModule: publicProcedure
       .input(z.object({ moduleId: z.number() }))
       .query(async ({ input }) => {
         return await db.getWeeksByModuleId(input.moduleId);

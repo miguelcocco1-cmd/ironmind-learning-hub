@@ -35,7 +35,6 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Início", icon: Home },
-    { href: "/modules", label: "Módulos", icon: Library },
     { href: "/dashboard", label: "Meu Progresso", icon: User },
   ];
 
