@@ -1,11 +1,27 @@
-import { eq } from "drizzle-orm";
+import { eq, and, desc, asc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { 
+  InsertUser, 
+  users,
+  modules,
+  weeks,
+  contents,
+  exercises,
+  userContentProgress,
+  exerciseSubmissions,
+  userModuleProgress,
+  InsertModule,
+  InsertWeek,
+  InsertContent,
+  InsertExercise,
+  InsertUserContentProgress,
+  InsertExerciseSubmission,
+  InsertUserModuleProgress
+} from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
-// Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
@@ -17,6 +33,8 @@ export async function getDb() {
   }
   return _db;
 }
+
+// ============= USER FUNCTIONS =============
 
 export async function upsertUser(user: InsertUser): Promise<void> {
   if (!user.openId) {
@@ -85,8 +103,160 @@ export async function getUserByOpenId(openId: string) {
   }
 
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
-
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// ============= MODULE FUNCTIONS =============
+
+export async function getAllModules() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(modules).where(eq(modules.isPublished, true)).orderBy(asc(modules.order));
+}
+
+export async function getModuleById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(modules).where(eq(modules.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createModule(module: InsertModule) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(modules).values(module);
+  return result;
+}
+
+// ============= WEEK FUNCTIONS =============
+
+export async function getWeeksByModuleId(moduleId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(weeks).where(and(eq(weeks.moduleId, moduleId), eq(weeks.isPublished, true))).orderBy(asc(weeks.weekNumber));
+}
+
+export async function getWeekById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(weeks).where(eq(weeks.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createWeek(week: InsertWeek) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(weeks).values(week);
+  return result;
+}
+
+// ============= CONTENT FUNCTIONS =============
+
+export async function getContentsByWeekId(weekId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(contents).where(and(eq(contents.weekId, weekId), eq(contents.isPublished, true))).orderBy(asc(contents.order));
+}
+
+export async function getContentById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(contents).where(eq(contents.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createContent(content: InsertContent) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(contents).values(content);
+  return result;
+}
+
+// ============= EXERCISE FUNCTIONS =============
+
+export async function getExercisesByWeekId(weekId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(exercises).where(and(eq(exercises.weekId, weekId), eq(exercises.isPublished, true))).orderBy(asc(exercises.order));
+}
+
+export async function getExerciseById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(exercises).where(eq(exercises.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createExercise(exercise: InsertExercise) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(exercises).values(exercise);
+  return result;
+}
+
+// ============= USER PROGRESS FUNCTIONS =============
+
+export async function getUserContentProgress(userId: number, contentId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(userContentProgress)
+    .where(and(eq(userContentProgress.userId, userId), eq(userContentProgress.contentId, contentId)))
+    .limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function upsertUserContentProgress(progress: InsertUserContentProgress) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const existing = await getUserContentProgress(progress.userId!, progress.contentId!);
+  
+  if (existing) {
+    await db.update(userContentProgress)
+      .set(progress)
+      .where(eq(userContentProgress.id, existing.id));
+  } else {
+    await db.insert(userContentProgress).values(progress);
+  }
+}
+
+export async function getUserModuleProgress(userId: number, moduleId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(userModuleProgress)
+    .where(and(eq(userModuleProgress.userId, userId), eq(userModuleProgress.moduleId, moduleId)))
+    .limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getAllUserProgress(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(userContentProgress).where(eq(userContentProgress.userId, userId));
+}
+
+// ============= EXERCISE SUBMISSION FUNCTIONS =============
+
+export async function getExerciseSubmissionsByUserId(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(exerciseSubmissions)
+    .where(eq(exerciseSubmissions.userId, userId))
+    .orderBy(desc(exerciseSubmissions.submittedAt));
+}
+
+export async function getUserExerciseSubmission(userId: number, exerciseId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(exerciseSubmissions)
+    .where(and(eq(exerciseSubmissions.userId, userId), eq(exerciseSubmissions.exerciseId, exerciseId)))
+    .limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createExerciseSubmission(submission: InsertExerciseSubmission) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(exerciseSubmissions).values(submission);
+  return result;
+}

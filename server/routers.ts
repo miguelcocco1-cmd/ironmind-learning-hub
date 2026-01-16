@@ -1,11 +1,13 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { z } from "zod";
+import * as db from "./db";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
+  
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
@@ -17,12 +19,179 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  // ============= MODULES =============
+  modules: router({
+    list: publicProcedure.query(async () => {
+      return await db.getAllModules();
+    }),
+    
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getModuleById(input.id);
+      }),
+    
+    create: protectedProcedure
+      .input(z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        order: z.number(),
+        thumbnailUrl: z.string().optional(),
+        isPublished: z.boolean().default(false),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createModule(input);
+      }),
+  }),
+
+  // ============= WEEKS =============
+  weeks: router({
+    listByModule: publicProcedure
+      .input(z.object({ moduleId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getWeeksByModuleId(input.moduleId);
+      }),
+    
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getWeekById(input.id);
+      }),
+    
+    create: protectedProcedure
+      .input(z.object({
+        moduleId: z.number(),
+        title: z.string(),
+        description: z.string().optional(),
+        weekNumber: z.number(),
+        isPublished: z.boolean().default(false),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createWeek(input);
+      }),
+  }),
+
+  // ============= CONTENTS =============
+  contents: router({
+    listByWeek: publicProcedure
+      .input(z.object({ weekId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getContentsByWeekId(input.weekId);
+      }),
+    
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getContentById(input.id);
+      }),
+    
+    create: protectedProcedure
+      .input(z.object({
+        weekId: z.number(),
+        title: z.string(),
+        description: z.string().optional(),
+        type: z.enum(["video", "audio", "pdf"]),
+        url: z.string(),
+        duration: z.number().optional(),
+        order: z.number(),
+        thumbnailUrl: z.string().optional(),
+        isPublished: z.boolean().default(false),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createContent(input);
+      }),
+  }),
+
+  // ============= EXERCISES =============
+  exercises: router({
+    listByWeek: publicProcedure
+      .input(z.object({ weekId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getExercisesByWeekId(input.weekId);
+      }),
+    
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getExerciseById(input.id);
+      }),
+    
+    create: protectedProcedure
+      .input(z.object({
+        weekId: z.number(),
+        title: z.string(),
+        description: z.string(),
+        instructions: z.string().optional(),
+        order: z.number(),
+        isPublished: z.boolean().default(false),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createExercise(input);
+      }),
+    
+    submit: protectedProcedure
+      .input(z.object({
+        exerciseId: z.number(),
+        content: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        return await db.createExerciseSubmission({
+          userId: ctx.user.id,
+          exerciseId: input.exerciseId,
+          content: input.content,
+          completed: true,
+        });
+      }),
+    
+    mySubmissions: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getExerciseSubmissionsByUserId(ctx.user.id);
+    }),
+  }),
+
+  // ============= PROGRESS =============
+  progress: router({
+    markContentComplete: protectedProcedure
+      .input(z.object({
+        contentId: z.number(),
+        watchedDuration: z.number().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        await db.upsertUserContentProgress({
+          userId: ctx.user.id,
+          contentId: input.contentId,
+          completed: true,
+          watchedDuration: input.watchedDuration || 0,
+          completedAt: new Date(),
+          lastWatchedAt: new Date(),
+        });
+        return { success: true };
+      }),
+    
+    updateWatchProgress: protectedProcedure
+      .input(z.object({
+        contentId: z.number(),
+        watchedDuration: z.number(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        await db.upsertUserContentProgress({
+          userId: ctx.user.id,
+          contentId: input.contentId,
+          watchedDuration: input.watchedDuration,
+          lastWatchedAt: new Date(),
+        });
+        return { success: true };
+      }),
+    
+    getMyProgress: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getAllUserProgress(ctx.user.id);
+    }),
+    
+    getContentProgress: protectedProcedure
+      .input(z.object({ contentId: z.number() }))
+      .query(async ({ input, ctx }) => {
+        return await db.getUserContentProgress(ctx.user.id, input.contentId);
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
