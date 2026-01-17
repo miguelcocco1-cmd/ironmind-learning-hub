@@ -4,9 +4,9 @@ import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
 import { Loader2 } from "lucide-react";
 
-export default function Modules() {
+export default function Cycles() {
   const [, setLocation] = useLocation();
-  const { data: modules, isLoading } = trpc.modules.list.useQuery();
+  const { data: cycles, isLoading } = trpc.cycles.list.useQuery();
 
   if (isLoading) {
     return (
@@ -22,24 +22,24 @@ export default function Modules() {
 
       <div className="container pt-24 pb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-          Todos os Módulos
+          Todos os Ciclos
         </h1>
 
-        {modules && modules.length > 0 ? (
+        {cycles && cycles.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {modules.map((module) => (
+            {cycles.map((cycle) => (
               <ContentCard
-                key={module.id}
-                title={module.title}
-                thumbnail={module.thumbnailUrl || undefined}
-                onClick={() => setLocation(`/module/${module.id}`)}
+                key={cycle.id}
+                title={cycle.title}
+                thumbnail={cycle.thumbnailUrl || undefined}
+                onClick={() => setLocation(`/cycle/${cycle.id}`)}
               />
             ))}
           </div>
         ) : (
           <div className="text-center py-20">
             <p className="text-lg text-muted-foreground">
-              Nenhum módulo disponível no momento.
+              Nenhum ciclo disponível no momento.
             </p>
           </div>
         )}

@@ -45,3 +45,10 @@
 - [x] Desativar verificação de autenticação na página Home
 - [x] Permitir acesso a todos os conteúdos sem login
 - [x] Remover redirecionamento para login
+
+## Reestruturação para 6 Ciclos
+- [x] Ajustar schema da base de dados (renomear modules para cycles)
+- [x] Criar interface de cards para os 6 ciclos na Home
+- [x] Criar página de detalhes de cada ciclo mostrando as semanas
+- [x] Ajustar página de semanas para mostrar conteúdos
+- [x] Popular base de dados com os 6 ciclos completos

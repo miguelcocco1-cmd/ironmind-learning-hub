@@ -3,20 +3,20 @@ import { drizzle } from "drizzle-orm/mysql2";
 import { 
   InsertUser, 
   users,
-  modules,
+  cycles,
   weeks,
   contents,
   exercises,
   userContentProgress,
   exerciseSubmissions,
-  userModuleProgress,
-  InsertModule,
+  userCycleProgress,
+  InsertCycle,
   InsertWeek,
   InsertContent,
   InsertExercise,
   InsertUserContentProgress,
   InsertExerciseSubmission,
-  InsertUserModuleProgress
+  InsertUserCycleProgress
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -106,34 +106,34 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// ============= MODULE FUNCTIONS =============
+// ============= CYCLE FUNCTIONS =============
 
-export async function getAllModules() {
+export async function getAllCycles() {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(modules).where(eq(modules.isPublished, true)).orderBy(asc(modules.order));
+  return db.select().from(cycles).where(eq(cycles.isPublished, true)).orderBy(asc(cycles.order));
 }
 
-export async function getModuleById(id: number) {
+export async function getCycleById(id: number) {
   const db = await getDb();
   if (!db) return undefined;
-  const result = await db.select().from(modules).where(eq(modules.id, id)).limit(1);
+  const result = await db.select().from(cycles).where(eq(cycles.id, id)).limit(1);
   return result.length > 0 ? result[0] : undefined;
 }
 
-export async function createModule(module: InsertModule) {
+export async function createCycle(cycle: InsertCycle) {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
-  const result = await db.insert(modules).values(module);
+  const result = await db.insert(cycles).values(cycle);
   return result;
 }
 
 // ============= WEEK FUNCTIONS =============
 
-export async function getWeeksByModuleId(moduleId: number) {
+export async function getWeeksByCycleId(cycleId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(weeks).where(and(eq(weeks.moduleId, moduleId), eq(weeks.isPublished, true))).orderBy(asc(weeks.weekNumber));
+  return db.select().from(weeks).where(and(eq(weeks.cycleId, cycleId), eq(weeks.isPublished, true))).orderBy(asc(weeks.weekNumber));
 }
 
 export async function getWeekById(id: number) {
@@ -220,11 +220,11 @@ export async function upsertUserContentProgress(progress: InsertUserContentProgr
   }
 }
 
-export async function getUserModuleProgress(userId: number, moduleId: number) {
+export async function getUserCycleProgress(userId: number, cycleId: number) {
   const db = await getDb();
   if (!db) return undefined;
-  const result = await db.select().from(userModuleProgress)
-    .where(and(eq(userModuleProgress.userId, userId), eq(userModuleProgress.moduleId, moduleId)))
+  const result = await db.select().from(userCycleProgress)
+    .where(and(eq(userCycleProgress.userId, userId), eq(userCycleProgress.cycleId, cycleId)))
     .limit(1);
   return result.length > 0 ? result[0] : undefined;
 }

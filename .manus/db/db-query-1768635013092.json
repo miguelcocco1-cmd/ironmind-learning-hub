@@ -1,0 +1,9 @@
+{
+  "query": "RENAME TABLE modules TO cycles;\nRENAME TABLE user_module_progress TO user_cycle_progress;\nALTER TABLE cycles ADD COLUMN color VARCHAR(50) AFTER `order`;\nALTER TABLE weeks ADD COLUMN type ENUM('topic', 'exercise') NOT NULL DEFAULT 'topic' AFTER weekNumber;\nALTER TABLE weeks CHANGE COLUMN moduleId cycleId INT NOT NULL;\nALTER TABLE user_cycle_progress CHANGE COLUMN moduleId cycleId INT NOT NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute RENAME TABLE modules TO cycles;\nRENAME TABLE user_module_progress TO user_cycle_progress;\nALTER TABLE cycles ADD COLUMN color VARCHAR(50) AFTER `order`;\nALTER TABLE weeks ADD COLUMN type ENUM('topic', 'exercise') NOT NULL DEFAULT 'topic' AFTER weekNumber;\nALTER TABLE weeks CHANGE COLUMN moduleId cycleId INT NOT NULL;\nALTER TABLE user_cycle_progress CHANGE COLUMN moduleId cycleId INT NOT NULL;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3583
+}

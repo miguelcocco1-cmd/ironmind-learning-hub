@@ -5,11 +5,11 @@ import { trpc } from "@/lib/trpc";
 import { Loader2, BookOpen, CheckCircle, Clock, Trophy } from "lucide-react";
 
 export default function Dashboard() {
-  const { data: modules, isLoading: modulesLoading } = trpc.modules.list.useQuery();
+  const { data: cycles, isLoading: cyclesLoading } = trpc.cycles.list.useQuery();
   const { data: progress, isLoading: progressLoading } = trpc.progress.getMyProgress.useQuery();
   const { data: submissions, isLoading: submissionsLoading } = trpc.exercises.mySubmissions.useQuery();
 
-  if (modulesLoading || progressLoading || submissionsLoading) {
+  if (cyclesLoading || progressLoading || submissionsLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -21,7 +21,7 @@ export default function Dashboard() {
   const totalContents = progress?.length || 0;
   const completionPercentage = totalContents > 0 ? (completedContents / totalContents) * 100 : 0;
 
-  const totalModules = modules?.length || 0;
+  const totalCycles = cycles?.length || 0;
   const totalExercises = submissions?.length || 0;
 
   return (
@@ -38,8 +38,8 @@ export default function Dashboard() {
           <Card className="p-6 bg-card border-border">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground mb-1">Módulos Disponíveis</p>
-                <p className="text-3xl font-bold text-foreground">{totalModules}</p>
+                <p className="text-sm text-muted-foreground mb-1">Ciclos Disponíveis</p>
+                <p className="text-3xl font-bold text-foreground">{totalCycles}</p>
               </div>
               <div className="p-3 bg-primary/10 rounded-lg">
                 <BookOpen className="h-6 w-6 text-primary" />

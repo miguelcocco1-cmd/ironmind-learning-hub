@@ -19,31 +19,33 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
 /**
- * Módulos do programa (8 módulos progressivos)
+ * Ciclos do programa (6 ciclos progressivos de 1 mês cada)
  */
-export const modules = mysqlTable("modules", {
+export const cycles = mysqlTable("cycles", {
   id: int("id").autoincrement().primaryKey(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
-  order: int("order").notNull(), // Ordem de apresentação (1-8)
-  thumbnailUrl: text("thumbnailUrl"), // Imagem de capa do módulo
+  order: int("order").notNull(), // Ordem de apresentação (1-6)
+  color: varchar("color", { length: 50 }), // Cor do ciclo (blue, green, orange, red, white, cyan)
+  thumbnailUrl: text("thumbnailUrl"), // Imagem de capa do ciclo
   isPublished: boolean("isPublished").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
 
-export type Module = typeof modules.$inferSelect;
-export type InsertModule = typeof modules.$inferInsert;
+export type Cycle = typeof cycles.$inferSelect;
+export type InsertCycle = typeof cycles.$inferInsert;
 
 /**
- * Semanas dentro de cada módulo
+ * Semanas/Itens dentro de cada ciclo (18 itens por ciclo: 12 tópicos + 6 exercícios)
  */
 export const weeks = mysqlTable("weeks", {
   id: int("id").autoincrement().primaryKey(),
-  moduleId: int("moduleId").notNull(),
+  cycleId: int("cycleId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
-  weekNumber: int("weekNumber").notNull(), // Número da semana dentro do módulo
+  weekNumber: int("weekNumber").notNull(), // Número do item dentro do ciclo (1-18)
+  type: mysqlEnum("type", ["topic", "exercise"]).notNull(), // Tópico teórico ou exercício prático
   isPublished: boolean("isPublished").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
@@ -53,7 +55,7 @@ export type Week = typeof weeks.$inferSelect;
 export type InsertWeek = typeof weeks.$inferInsert;
 
 /**
- * Conteúdos de cada semana (vídeos, áudios, PDFs)
+ * Conteúdos de cada semana/item (vídeos, áudios, PDFs)
  */
 export const contents = mysqlTable("contents", {
   id: int("id").autoincrement().primaryKey(),
@@ -127,17 +129,17 @@ export type ExerciseSubmission = typeof exerciseSubmissions.$inferSelect;
 export type InsertExerciseSubmission = typeof exerciseSubmissions.$inferInsert;
 
 /**
- * Progresso geral do utilizador nos módulos
+ * Progresso geral do utilizador nos ciclos
  */
-export const userModuleProgress = mysqlTable("user_module_progress", {
+export const userCycleProgress = mysqlTable("user_cycle_progress", {
   id: int("id").autoincrement().primaryKey(),
   userId: int("userId").notNull(),
-  moduleId: int("moduleId").notNull(),
+  cycleId: int("cycleId").notNull(),
   completed: boolean("completed").default(false).notNull(),
   completedAt: timestamp("completedAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
 
-export type UserModuleProgress = typeof userModuleProgress.$inferSelect;
-export type InsertUserModuleProgress = typeof userModuleProgress.$inferInsert;
+export type UserCycleProgress = typeof userCycleProgress.$inferSelect;
+export type InsertUserCycleProgress = typeof userCycleProgress.$inferInsert;

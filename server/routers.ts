@@ -20,16 +20,16 @@ export const appRouter = router({
     }),
   }),
 
-  // ============= MODULES =============
-  modules: router({
+  // ============= CYCLES =============
+  cycles: router({
     list: publicProcedure.query(async () => {
-      return await db.getAllModules();
+      return await db.getAllCycles();
     }),
     
     getById: publicProcedure
       .input(z.object({ id: z.number() }))
       .query(async ({ input }) => {
-        return await db.getModuleById(input.id);
+        return await db.getCycleById(input.id);
       }),
     
     create: protectedProcedure
@@ -41,7 +41,7 @@ export const appRouter = router({
         isPublished: z.boolean().default(false),
       }))
       .mutation(async ({ input }) => {
-        return await db.createModule(input);
+        return await db.createCycle(input);
       }),
   }),
 
@@ -52,10 +52,10 @@ export const appRouter = router({
       return await getAllWeeksWithContents(userId);
     }),
     
-listByModule: publicProcedure
-      .input(z.object({ moduleId: z.number() }))
+listByCycle: publicProcedure
+      .input(z.object({ cycleId: z.number() }))
       .query(async ({ input }) => {
-        return await db.getWeeksByModuleId(input.moduleId);
+        return await db.getWeeksByCycleId(input.cycleId);
       }),
     
     getById: publicProcedure
@@ -66,10 +66,11 @@ listByModule: publicProcedure
     
     create: protectedProcedure
       .input(z.object({
-        moduleId: z.number(),
+        cycleId: z.number(),
         title: z.string(),
         description: z.string().optional(),
         weekNumber: z.number(),
+        type: z.enum(["topic", "exercise"]),
         isPublished: z.boolean().default(false),
       }))
       .mutation(async ({ input }) => {

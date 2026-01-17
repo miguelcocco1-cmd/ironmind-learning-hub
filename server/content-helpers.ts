@@ -1,13 +1,13 @@
 import * as db from "./db";
 
 export async function getAllWeeksWithContents(userId?: number) {
-  // Get all modules
-  const modules = await db.getAllModules();
+  // Get all cycles
+  const cycles = await db.getAllCycles();
   
-  // Get all weeks for all modules
+  // Get all weeks for all cycles
   const allWeeks = [];
-  for (const module of modules) {
-    const weeks = await db.getWeeksByModuleId(module.id);
+  for (const cycle of cycles) {
+    const weeks = await db.getWeeksByCycleId(cycle.id);
     allWeeks.push(...weeks);
   }
   
@@ -39,9 +39,9 @@ export async function getAllWeeksWithContents(userId?: number) {
   
   // Sort by week number
   return weeksWithContents.sort((a, b) => {
-    // First sort by moduleId, then by weekNumber
-    if (a.moduleId !== b.moduleId) {
-      return a.moduleId - b.moduleId;
+    // First sort by cycleId, then by weekNumber
+    if (a.cycleId !== b.cycleId) {
+      return a.cycleId - b.cycleId;
     }
     return a.weekNumber - b.weekNumber;
   });
