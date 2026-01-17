@@ -40,3 +40,8 @@
 - [x] Reorganizar página Home para mostrar semanas diretamente
 - [x] Mostrar conteúdos de cada semana na mesma página
 - [x] Remover navegação por módulos intermediária
+
+## Acesso Temporário sem Autenticação
+- [x] Desativar verificação de autenticação na página Home
+- [x] Permitir acesso a todos os conteúdos sem login
+- [x] Remover redirecionamento para login
