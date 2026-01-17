@@ -27,29 +27,29 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container">
-        <div className="flex items-center justify-between h-16">
+      <div className="container px-4">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <Link href="/">
-            <a className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
+            <a className="text-xl md:text-2xl font-bold text-primary hover:text-primary/90 transition-colors touch-manipulation">
               IRON MIND
             </a>
           </Link>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-4 md:space-x-8">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location === link.href;
               return (
                 <Link key={link.href} href={link.href}>
                   <a
-                    className={`flex items-center space-x-2 text-sm font-medium transition-colors hover:text-primary ${
+                    className={`flex items-center space-x-1 md:space-x-2 text-xs md:text-sm font-medium transition-colors hover:text-primary touch-manipulation ${
                       isActive ? "text-primary" : "text-muted-foreground"
                     }`}
                   >
-                    <Icon className="h-4 w-4" />
-                    <span>{link.label}</span>
+                    <Icon className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden sm:inline">{link.label}</span>
                   </a>
                 </Link>
               );

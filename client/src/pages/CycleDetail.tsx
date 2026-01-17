@@ -46,24 +46,24 @@ export default function CycleDetail() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <div className="container pt-24 pb-12">
+      <div className="container pt-20 md:pt-24 pb-8 md:pb-12 px-4">
         {/* Back Button */}
         <Button
           variant="ghost"
-          className="mb-6"
+          className="mb-4 md:mb-6 touch-manipulation"
           onClick={() => setLocation("/")}
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <ArrowLeft className="mr-2 h-4 w-4 md:h-5 md:w-5" />
           Voltar
         </Button>
 
         {/* Cycle Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
             {cycle.title}
           </h1>
           {cycle.description && (
-            <p className="text-lg text-muted-foreground max-w-3xl">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               {cycle.description}
             </p>
           )}
@@ -72,8 +72,8 @@ export default function CycleDetail() {
         {/* Weeks/Items Grid */}
         {weeks && weeks.length > 0 ? (
           <div>
-            <h2 className="text-2xl font-bold mb-6 text-foreground">Itens do Ciclo</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">Itens do Ciclo</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
               {weeks.map((week) => (
                 <ContentCard
                   key={week.id}

@@ -52,3 +52,11 @@
 - [x] Criar página de detalhes de cada ciclo mostrando as semanas
 - [x] Ajustar página de semanas para mostrar conteúdos
 - [x] Popular base de dados com os 6 ciclos completos
+
+## Otimização Mobile
+- [x] Aumentar tamanho de texto e botões para melhor legibilidade no telemóvel
+- [x] Ajustar espaçamento e padding para telas pequenas
+- [x] Melhorar navegação mobile (menu hamburger se necessário)
+- [x] Otimizar hero banner para dispositivos móveis
+- [x] Ajustar grid de cards de ciclos para mobile (1 coluna)
+- [x] Testar e validar responsividade em diferentes tamanhos de tela

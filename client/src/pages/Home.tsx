@@ -31,7 +31,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[70vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -40,10 +40,10 @@ export default function Home() {
           }}
         />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-white px-4">
             IRON MIND Training Lab
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
+          <p className="text-base md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto mb-6 md:mb-8 px-4 leading-relaxed">
             O treino mental que acompanha o teu treino físico. Desenvolve foco, resiliência e performance máxima através de técnicas avançadas de hipnose desportiva e psicologia do desporto.
           </p>
           <div className="flex gap-4 justify-center">
@@ -52,7 +52,7 @@ export default function Home() {
                 const cyclesSection = document.getElementById('cycles');
                 cyclesSection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all flex items-center gap-2"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-all flex items-center gap-2 touch-manipulation"
             >
               Começar
               <ChevronRight className="h-5 w-5" />
@@ -62,18 +62,18 @@ export default function Home() {
       </div>
 
       {/* Cycles Section */}
-      <div id="cycles" className="container py-16">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">
+      <div id="cycles" className="container py-8 md:py-16 px-4">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-foreground">
             6 Ciclos Progressivos
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
             Programa completo de 6 meses estruturado em ciclos mensais. Cada ciclo contém 12 tópicos teóricos e 6 exercícios práticos das 6 áreas mentais fundamentais.
           </p>
         </div>
 
         {cycles && cycles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {cycles.map((cycle) => {
               const colors = cycleColors[cycle.order] || cycleColors[1];
               
@@ -81,28 +81,28 @@ export default function Home() {
                 <Card
                   key={cycle.id}
                   onClick={() => setLocation(`/cycle/${cycle.id}`)}
-                  className={`group cursor-pointer border-2 ${colors.border} ${colors.bg} hover:scale-105 transition-all duration-300 overflow-hidden`}
+                  className={`group cursor-pointer border-2 ${colors.border} ${colors.bg} hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden touch-manipulation`}
                 >
-                  <div className="p-8">
+                  <div className="p-6 md:p-8">
                     {/* Cycle Number */}
-                    <div className={`text-6xl font-bold mb-4 ${colors.icon} opacity-20 group-hover:opacity-30 transition-opacity`}>
+                    <div className={`text-5xl md:text-6xl font-bold mb-3 md:mb-4 ${colors.icon} opacity-20 group-hover:opacity-30 transition-opacity`}>
                       {cycle.order}
                     </div>
 
                     {/* Cycle Title */}
-                    <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors leading-tight">
                       {cycle.title}
                     </h3>
 
                     {/* Cycle Description */}
                     {cycle.description && (
-                      <p className="text-muted-foreground mb-6 line-clamp-3">
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6 line-clamp-3 leading-relaxed">
                         {cycle.description}
                       </p>
                     )}
 
                     {/* Call to Action */}
-                    <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all">
+                    <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all text-sm md:text-base">
                       Explorar Ciclo
                       <ChevronRight className="h-5 w-5" />
                     </div>
@@ -121,24 +121,24 @@ export default function Home() {
       </div>
 
       {/* Program Overview */}
-      <div className="bg-muted/30 py-16">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="bg-muted/30 py-8 md:py-16">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">6</div>
-              <div className="text-muted-foreground">Ciclos Mensais</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-1 md:mb-2">6</div>
+              <div className="text-sm md:text-base text-muted-foreground">Ciclos Mensais</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">108</div>
-              <div className="text-muted-foreground">Itens Totais</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-1 md:mb-2">108</div>
+              <div className="text-sm md:text-base text-muted-foreground">Itens Totais</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">72</div>
-              <div className="text-muted-foreground">Tópicos Teóricos</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-1 md:mb-2">72</div>
+              <div className="text-sm md:text-base text-muted-foreground">Tópicos Teóricos</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-primary mb-2">36</div>
-              <div className="text-muted-foreground">Exercícios Práticos</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-1 md:mb-2">36</div>
+              <div className="text-sm md:text-base text-muted-foreground">Exercícios Práticos</div>
             </div>
           </div>
         </div>

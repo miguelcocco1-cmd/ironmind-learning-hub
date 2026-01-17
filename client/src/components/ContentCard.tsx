@@ -29,7 +29,7 @@ export function ContentCard({
   return (
     <Card
       className={cn(
-        "relative overflow-hidden cursor-pointer card-hover bg-card border-border group",
+        "relative overflow-hidden cursor-pointer card-hover bg-card border-border group touch-manipulation active:scale-95 transition-transform",
         className
       )}
       onClick={onClick}
@@ -44,33 +44,33 @@ export function ContentCard({
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5">
-            <Play className="h-12 w-12 text-primary/50" />
+            <Play className="h-10 w-10 md:h-12 md:w-12 text-primary/50" />
           </div>
         )}
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <Play className="h-16 w-16 text-white" />
+          <Play className="h-12 w-12 md:h-16 md:w-16 text-white" />
         </div>
 
         {/* Duration Badge */}
         {duration && (
-          <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
+          <div className="absolute bottom-1.5 right-1.5 md:bottom-2 md:right-2 bg-black/80 text-white text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded">
             {formatDuration(duration)}
           </div>
         )}
 
         {/* Completed Badge */}
         {completed && (
-          <div className="absolute top-2 right-2 bg-green-600 text-white rounded-full p-1">
-            <CheckCircle className="h-5 w-5" />
+          <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 bg-green-600 text-white rounded-full p-0.5 md:p-1">
+            <CheckCircle className="h-4 w-4 md:h-5 md:w-5" />
           </div>
         )}
       </div>
 
       {/* Title */}
-      <div className="p-4">
-        <h3 className="text-sm font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+      <div className="p-3 md:p-4">
+        <h3 className="text-xs md:text-sm font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors leading-tight">
           {title}
         </h3>
       </div>
