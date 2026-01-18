@@ -106,3 +106,10 @@
 - [x] Verificar se problema está no filtro isPublished
 - [x] Verificar se aula ao vivo tem isPublished=true (ESTAVA FALSE!)
 - [x] Corrigir publicando todas as 24 aulas ao vivo
+
+## Ciclo de Introdução
+- [x] Criar Ciclo 0 (Introdução) na base de dados
+- [x] Adicionar secções: Boas-vindas, Como Funciona, Preparação Mental
+- [x] Criar card especial com cor única (amarelo/dourado)
+- [x] Posicionar antes dos 6 ciclos principais
+- [x] Ajustar interface para mostrar secções em vez de semanas

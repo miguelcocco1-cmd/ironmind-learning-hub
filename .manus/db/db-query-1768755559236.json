@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO weeks (cycleId, title, description, weekNumber, weekGroup, type, isPublished, createdAt, updatedAt) VALUES\n(0, '👋 Boas-vindas ao IRON MIND Training Lab', 'Mensagem de boas-vindas e visão geral do programa de treino mental para atletas de triatlo', 1, 1, 'topic', 1, NOW(), NOW()),\n(0, '📖 Como Funciona o Programa', 'Estrutura do programa: 6 ciclos progressivos, aulas ao vivo semanais, exercícios práticos e materiais de apoio', 2, 1, 'topic', 1, NOW(), NOW()),\n(0, '🎯 Preparação Mental para Começar', 'Como preparar-se mentalmente para aproveitar ao máximo o treino mental e criar hábitos consistentes', 3, 1, 'topic', 1, NOW(), NOW());",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute INSERT INTO weeks (cycleId, title, description, weekNumber, weekGroup, type, isPublished, createdAt, updatedAt) VALUES\n(0, '👋 Boas-vindas ao IRON MIND Training Lab', 'Mensagem de boas-vindas e visão geral do programa de treino mental para atletas de triatlo', 1, 1, 'topic', 1, NOW(), NOW()),\n(0, '📖 Como Funciona o Programa', 'Estrutura do programa: 6 ciclos progressivos, aulas ao vivo semanais, exercícios práticos e materiais de apoio', 2, 1, 'topic', 1, NOW(), NOW()),\n(0, '🎯 Preparação Mental para Começar', 'Como preparar-se mentalmente para aproveitar ao máximo o treino mental e criar hábitos consistentes', 3, 1, 'topic', 1, NOW(), NOW());",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 61
+}

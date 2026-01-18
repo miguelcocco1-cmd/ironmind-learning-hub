@@ -42,17 +42,22 @@ export default function CycleDetail() {
     );
   }
 
-  // Agrupar itens por semana (weekGroup 1-4)
-  const weekGroups = [1, 2, 3, 4].map(weekNum => {
-    const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
-    return {
-      weekNumber: weekNum,
-      items,
-      totalItems: items.length,
-      topics: items.filter(i => i.type === 'topic').length,
-      exercises: items.filter(i => i.type === 'exercise').length,
-    };
-  });
+  // Para o ciclo de Introdução (id=0), mostrar secções em vez de semanas
+  const isIntroduction = cycleId === 0;
+  
+  // Agrupar itens por semana (weekGroup 1-4) ou mostrar todos para Introdução
+  const weekGroups = isIntroduction 
+    ? [{ weekNumber: 1, items: allWeeks || [], totalItems: allWeeks?.length || 0, topics: allWeeks?.filter(i => i.type === 'topic').length || 0, exercises: 0 }]
+    : [1, 2, 3, 4].map(weekNum => {
+        const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
+        return {
+          weekNumber: weekNum,
+          items,
+          totalItems: items.length,
+          topics: items.filter(i => i.type === 'topic').length,
+          exercises: items.filter(i => i.type === 'exercise').length,
+        };
+      });
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,10 +86,10 @@ export default function CycleDetail() {
           )}
         </div>
 
-        {/* 4 Semanas */}
+        {/* 4 Semanas ou Secções */}
         <div>
           <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">
-            4 Semanas do Ciclo
+            {isIntroduction ? "Secções" : "4 Semanas do Ciclo"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {weekGroups.map((week) => (
@@ -108,7 +113,7 @@ export default function CycleDetail() {
 
                   {/* Week Title */}
                   <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white group-hover:text-primary transition-colors leading-tight">
-                    Semana {week.weekNumber}
+                    {isIntroduction ? "Introdução" : `Semana ${week.weekNumber}`}
                   </h3>
 
                   {/* Week Stats */}

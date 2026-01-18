@@ -18,6 +18,7 @@ export default function Home() {
 
   // Cores dos ciclos baseadas no documento
   const cycleColors: Record<number, { bg: string; border: string; icon: string }> = {
+    0: { bg: "bg-yellow-500/10", border: "border-yellow-500/50", icon: "text-yellow-500" }, // Introdução
     1: { bg: "bg-blue-500/10", border: "border-blue-500/50", icon: "text-blue-500" },
     2: { bg: "bg-green-500/10", border: "border-green-500/50", icon: "text-green-500" },
     3: { bg: "bg-orange-500/10", border: "border-orange-500/50", icon: "text-orange-500" },
