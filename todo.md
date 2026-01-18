@@ -163,3 +163,10 @@
 - [x] Criar quizzes para todos os itens dos Ciclos 1-6 (90 quizzes)
 - [x] Atualizar ItemDetail.tsx para mostrar card de Quiz
 - [x] Criar página de Quiz com perguntas e avaliação (5 perguntas, resultado com percentagem)
+
+## Overlay de Texto nas Imagens dos Exercícios
+- [x] Adicionar campo `area` à tabela weeks para categorizar exercícios
+- [x] Categorizar 72 exercícios existentes nas 5 áreas (Mental Foundation, Focus Lock, Pressure Release, Mental Strength, Mental Recovery)
+- [x] Atualizar ContentCard para mostrar overlay de texto nos exercícios
+- [x] Adicionar nome da área no canto superior esquerdo com fundo escuro
+- [x] Adicionar "IRON MIND Training Lab" no canto inferior esquerdo com fundo escuro

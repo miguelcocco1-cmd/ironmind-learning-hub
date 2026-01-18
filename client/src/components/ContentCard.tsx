@@ -8,6 +8,7 @@ interface ContentCardProps {
   duration?: number;
   completed?: boolean;
   isAccessible?: boolean;
+  area?: string; // Área temática do exercício (mental_foundation, focus_lock, etc.)
   onClick?: () => void;
   className?: string;
 }
@@ -18,9 +19,18 @@ export function ContentCard({
   duration,
   completed = false,
   isAccessible = true,
+  area,
   onClick,
   className,
 }: ContentCardProps) {
+  // Mapear nomes das áreas
+  const areaNames: Record<string, string> = {
+    mental_foundation: "Mental Foundation",
+    focus_lock: "Focus Lock",
+    pressure_release: "Pressure Release",
+    mental_strength: "Mental Strength",
+    mental_recovery: "Mental Recovery"
+  };
   const formatDuration = (seconds?: number) => {
     if (!seconds) return "";
     const mins = Math.floor(seconds / 60);
@@ -57,6 +67,25 @@ export function ContentCard({
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Play className="h-12 w-12 md:h-16 md:w-16 text-white" />
         </div>
+
+        {/* Overlay de Texto para Exercícios com Área */}
+        {area && (
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            {/* Nome da Área - Canto Superior Esquerdo */}
+            <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-black/70 px-3 py-1.5 md:px-4 md:py-2 rounded">
+              <p className="text-xs md:text-sm font-bold text-white uppercase tracking-wide">
+                {areaNames[area] || area}
+              </p>
+            </div>
+            
+            {/* IRON MIND Training Lab - Canto Inferior Esquerdo */}
+            <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-black/70 px-3 py-1.5 md:px-4 md:py-2 rounded">
+              <p className="text-xs md:text-sm font-semibold text-white">
+                IRON MIND Training Lab
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Overlay de Bloqueio */}
         {!isAccessible && (
