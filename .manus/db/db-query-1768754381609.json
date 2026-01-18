@@ -1,0 +1,186 @@
+{
+  "query": "SELECT id, title, type, weekNumber, weekGroup, cycleId \nFROM weeks \nWHERE cycleId = 1 \nORDER BY weekGroup ASC, weekNumber ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, type, weekNumber, weekGroup, cycleId \nFROM weeks \nWHERE cycleId = 1 \nORDER BY weekGroup ASC, weekNumber ASC;",
+  "rows": [
+    {
+      "id": "60001",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "type": "live",
+      "weekNumber": "0",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60025",
+      "title": "Tópico 1: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "1",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60026",
+      "title": "Tópico 2: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "2",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60027",
+      "title": "Tópico 3: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "3",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60028",
+      "title": "Tópico 4: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "4",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60029",
+      "title": "Tópico 5: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "5",
+      "weekGroup": "1",
+      "cycleId": "1"
+    },
+    {
+      "id": "60002",
+      "title": "Aula 2 IRON MIND Training Lab",
+      "type": "live",
+      "weekNumber": "0",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60030",
+      "title": "Tópico 6: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "6",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60031",
+      "title": "Tópico 7: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "7",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60032",
+      "title": "Tópico 8: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "8",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60033",
+      "title": "Tópico 9: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "9",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60034",
+      "title": "Tópico 10: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "10",
+      "weekGroup": "2",
+      "cycleId": "1"
+    },
+    {
+      "id": "60003",
+      "title": "Aula 3 IRON MIND Training Lab",
+      "type": "live",
+      "weekNumber": "0",
+      "weekGroup": "3",
+      "cycleId": "1"
+    },
+    {
+      "id": "60035",
+      "title": "Tópico 11: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "11",
+      "weekGroup": "3",
+      "cycleId": "1"
+    },
+    {
+      "id": "60036",
+      "title": "Tópico 12: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "12",
+      "weekGroup": "3",
+      "cycleId": "1"
+    },
+    {
+      "id": "60037",
+      "title": "Exercício 1: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "13",
+      "weekGroup": "3",
+      "cycleId": "1"
+    },
+    {
+      "id": "60038",
+      "title": "Exercício 2: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "14",
+      "weekGroup": "3",
+      "cycleId": "1"
+    },
+    {
+      "id": "60004",
+      "title": "Aula 4 IRON MIND Training Lab",
+      "type": "live",
+      "weekNumber": "0",
+      "weekGroup": "4",
+      "cycleId": "1"
+    },
+    {
+      "id": "60039",
+      "title": "Exercício 3: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "15",
+      "weekGroup": "4",
+      "cycleId": "1"
+    },
+    {
+      "id": "60040",
+      "title": "Exercício 4: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "16",
+      "weekGroup": "4",
+      "cycleId": "1"
+    },
+    {
+      "id": "60041",
+      "title": "Exercício 5: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "17",
+      "weekGroup": "4",
+      "cycleId": "1"
+    },
+    {
+      "id": "60042",
+      "title": "Exercício 6: Prática de Auto-Hipnose",
+      "type": "exercise",
+      "weekNumber": "18",
+      "weekGroup": "4",
+      "cycleId": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttype\tweekNumber\tweekGroup\tcycleId\n60001\tAula 1 IRON MIND Training Lab\tlive\t0\t1\t1\n60025\tTópico 1: Fundação Mental\ttopic\t1\t1\t1\n60026\tTópico 2: Fundação Mental\ttopic\t2\t1\t1\n60027\tTópico 3: Fundação Mental\ttopic\t3\t1\t1\n60028\tTópico 4: Fundação Mental\ttopic\t4\t1\t1\n60029\tTópico 5: Fundação Mental\ttopic\t5\t1\t1\n60002\tAula 2 IRON MIND Training Lab\tlive\t0\t2\t1\n60030\tTópico 6: Fundação Mental\ttopic\t6\t2\t1\n60031\tTópico 7: Fundação Mental\ttopic\t7\t2\t1\n60032\tTópico 8: Fundação Mental\ttopic\t8\t2\t1\n60033\tTópico 9: Fundação Mental\ttopic\t9\t2\t1\n60034\tTópico 10: Fundação Mental\ttopic\t10\t2\t1\n60003\tAula 3 IRON MIND Training Lab\tlive\t0\t3\t1\n60035\tTópico 11: Fundação Mental\ttopic\t11\t3\t1\n60036\tTópico 12: Fundação Mental\ttopic\t12\t3\t1\n60037\tExercício 1: Prática de Auto-Hipnose\texercise\t13\t3\t1\n60038\tExercício 2: Prática de Auto-Hipnose\texercise\t14\t3\t1\n60004\tAula 4 IRON MIND Training Lab\tlive\t0\t4\t1\n60039\tExercício 3: Prática de Auto-Hipnose\texercise\t15\t4\t1\n60040\tExercício 4: Prática de Auto-Hipnose\texercise\t16\t4\t1\n60041\tExercício 5: Prática de Auto-Hipnose\texercise\t17\t4\t1\n60042\tExercício 6: Prática de Auto-Hipnose\texercise\t18\t4\t1\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

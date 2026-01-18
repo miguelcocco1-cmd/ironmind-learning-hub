@@ -87,3 +87,9 @@
 - [x] Gerar imagens blur para thumbnails dos tópicos
 - [x] Implementar imagens nos componentes de semana
 - [x] Implementar imagens nos cards de conteúdo
+
+## Correção: Aulas ao Vivo Não Aparecem
+- [x] Verificar por que aula ao vivo não aparece na Semana 1
+- [x] Confirmar que aulas ao vivo existem na base de dados
+- [x] Corrigir filtro ou query que impede visualização
+- [x] Garantir que aula ao vivo aparece como primeiro card em todas as semanas

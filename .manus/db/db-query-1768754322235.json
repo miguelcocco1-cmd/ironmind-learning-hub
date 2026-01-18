@@ -1,0 +1,64 @@
+{
+  "query": "SELECT id, title, type, weekNumber, weekGroup, cycleId, isPublished \nFROM weeks \nWHERE cycleId = 1 AND weekGroup = 1 \nORDER BY weekNumber ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, type, weekNumber, weekGroup, cycleId, isPublished \nFROM weeks \nWHERE cycleId = 1 AND weekGroup = 1 \nORDER BY weekNumber ASC;",
+  "rows": [
+    {
+      "id": "60001",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "type": "live",
+      "weekNumber": "0",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60025",
+      "title": "Tópico 1: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "1",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60026",
+      "title": "Tópico 2: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "2",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60027",
+      "title": "Tópico 3: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "3",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60028",
+      "title": "Tópico 4: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "4",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60029",
+      "title": "Tópico 5: Fundação Mental",
+      "type": "topic",
+      "weekNumber": "5",
+      "weekGroup": "1",
+      "cycleId": "1",
+      "isPublished": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttype\tweekNumber\tweekGroup\tcycleId\tisPublished\n60001\tAula 1 IRON MIND Training Lab\tlive\t0\t1\t1\t1\n60025\tTópico 1: Fundação Mental\ttopic\t1\t1\t1\t1\n60026\tTópico 2: Fundação Mental\ttopic\t2\t1\t1\t1\n60027\tTópico 3: Fundação Mental\ttopic\t3\t1\t1\t1\n60028\tTópico 4: Fundação Mental\ttopic\t4\t1\t1\t1\n60029\tTópico 5: Fundação Mental\ttopic\t5\t1\t1\t1\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}
