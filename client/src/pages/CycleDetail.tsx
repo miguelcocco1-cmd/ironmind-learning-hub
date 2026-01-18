@@ -91,25 +91,32 @@ export default function CycleDetail() {
               <Card
                 key={week.weekNumber}
                 onClick={() => setLocation(`/cycle/${cycleId}/week/${week.weekNumber}`)}
-                className="group cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border-2 border-border bg-card touch-manipulation"
+                className="group cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border-2 border-border bg-card touch-manipulation relative"
               >
-                <div className="p-6 md:p-8">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                  style={{ backgroundImage: `url(/week-${week.weekNumber}-bg.jpg)` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                
+                <div className="relative z-10 p-6 md:p-8">
                   {/* Week Number */}
-                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-4 text-primary/20 group-hover:text-primary/30 transition-colors">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-4 text-white/40 group-hover:text-white/60 transition-colors">
                     {week.weekNumber}
                   </div>
 
                   {/* Week Title */}
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white group-hover:text-primary transition-colors leading-tight">
                     Semana {week.weekNumber}
                   </h3>
 
                   {/* Week Stats */}
                   <div className="space-y-2 mb-4 md:mb-6">
-                    <p className="text-sm md:text-base text-muted-foreground">
+                    <p className="text-sm md:text-base text-white/80">
                       {week.totalItems} itens totais
                     </p>
-                    <div className="flex gap-4 text-xs md:text-sm text-muted-foreground">
+                    <div className="flex gap-4 text-xs md:text-sm text-white/70">
                       <span>{week.topics} tópicos</span>
                       <span>•</span>
                       <span>{week.exercises} exercícios</span>
@@ -117,7 +124,7 @@ export default function CycleDetail() {
                   </div>
 
                   {/* Call to Action */}
-                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all text-sm md:text-base">
+                  <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all text-sm md:text-base">
                     Ver Conteúdos
                     <ChevronRight className="h-5 w-5" />
                   </div>

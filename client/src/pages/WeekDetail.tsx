@@ -82,17 +82,21 @@ export default function WeekDetail() {
 
         {/* Items Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-          {weekItems.map((item) => {
+          {weekItems.map((item, index) => {
             const isLive = item.type === 'live';
             const itemLabel = item.type === 'live' ? '🔴 AO VIVO' : 
                              item.type === 'topic' ? `Tópico ${item.weekNumber}` : 
                              `Exercício ${item.weekNumber}`;
             
+            // Rodar entre as 5 imagens de tópicos para variedade
+            const topicImageIndex = ((item.weekNumber || index) % 5) + 1;
+            const thumbnail = isLive ? "/live-class-cinematic.jpg" : `/topic-${topicImageIndex}.jpg`;
+            
             return (
               <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>
                 <ContentCard
                   title={`${itemLabel}: ${item.title}`}
-                  thumbnail={isLive ? "/live-class-cinematic.jpg" : undefined}
+                  thumbnail={thumbnail}
                   onClick={() => setLocation(`/item/${item.id}`)}
                   className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
                 />

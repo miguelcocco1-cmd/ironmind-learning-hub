@@ -81,3 +81,9 @@
 - [x] Garantir que aulas ao vivo (weekNumber = 0) aparecem primeiro
 - [x] Adicionar tópicos e exercícios ao Ciclo 1
 - [ ] Adicionar tópicos e exercícios aos Ciclos 2-6
+
+## Imagens Cinematográficas
+- [x] Gerar 4 imagens blur para cards das semanas (uma cor por semana)
+- [x] Gerar imagens blur para thumbnails dos tópicos
+- [x] Implementar imagens nos componentes de semana
+- [x] Implementar imagens nos cards de conteúdo
