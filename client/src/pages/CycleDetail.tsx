@@ -42,12 +42,24 @@ export default function CycleDetail() {
     );
   }
 
-  // Para o ciclo de Introdução (id=0), mostrar secções em vez de semanas
+  // Para o ciclo de Introdução (id=0), mostrar secções personalizadas
   const isIntroduction = cycleId === 0;
   
-  // Agrupar itens por semana (weekGroup 1-4) ou mostrar todos para Introdução
+  // Agrupar itens por semana (weekGroup 1-4) ou criar cards personalizados para Introdução
   const weekGroups = isIntroduction 
-    ? [{ weekNumber: 1, items: allWeeks || [], totalItems: allWeeks?.length || 0, topics: allWeeks?.filter(i => i.type === 'topic').length || 0, exercises: 0 }]
+    ? [1, 2, 3, 4].map(weekNum => {
+        const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
+        const item = items[0]; // Cada weekGroup tem 1 item com título personalizado
+        return {
+          weekNumber: weekNum,
+          title: item?.title || `Secção ${weekNum}`,
+          description: item?.description || '',
+          items,
+          totalItems: items.length,
+          topics: items.filter(i => i.type === 'topic').length,
+          exercises: 0,
+        };
+      })
     : [1, 2, 3, 4].map(weekNum => {
         const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
         return {
@@ -113,8 +125,13 @@ export default function CycleDetail() {
 
                   {/* Week Title */}
                   <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white group-hover:text-primary transition-colors leading-tight">
-                    {isIntroduction ? "Introdução" : `Semana ${week.weekNumber}`}
+                    {isIntroduction ? (week as any).title : `Semana ${week.weekNumber}`}
                   </h3>
+                  {isIntroduction && (week as any).description && (
+                    <p className="text-sm md:text-base text-white/70 mb-3 md:mb-4 line-clamp-2">
+                      {(week as any).description}
+                    </p>
+                  )}
 
                   {/* Week Stats */}
                   <div className="space-y-2 mb-4 md:mb-6">

@@ -113,3 +113,9 @@
 - [x] Criar card especial com cor única (amarelo/dourado)
 - [x] Posicionar antes dos 6 ciclos principais
 - [x] Ajustar interface para mostrar secções em vez de semanas
+
+## Personalização do Ciclo de Introdução
+- [x] Remover itens existentes da Introdução
+- [x] Criar 4 secções personalizadas com títulos específicos
+- [x] Ajustar interface para mostrar títulos em vez de "Semana X"
+- [x] Adicionar conteúdos às 4 secções
