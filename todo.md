@@ -152,3 +152,8 @@
 - [x] Bloquear todos os conteúdos de todas as semanas dos Ciclos 2-6
 - [x] Manter apenas Semana 1 do Ciclo 1 acessível
 - [x] Ajustar lógica do frontend para considerar cycleId no bloqueio
+
+## Ajuste do Ciclo 0 (Introdução)
+- [x] Criar estrutura especial onde cada secção mostra conteúdos diretamente
+- [x] Ajustar CycleDetail.tsx para navegar diretamente para conteúdos no Ciclo 0
+- [x] Remover navegação intermediária de itens no Ciclo 0

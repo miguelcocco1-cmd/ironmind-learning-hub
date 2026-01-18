@@ -54,6 +54,7 @@ export default function CycleDetail() {
           weekNumber: weekNum,
           title: item?.weekName || item?.title || `Secção ${weekNum}`,
           description: item?.description || '',
+          itemId: item?.id, // ID do item para navegação direta
           items,
           totalItems: items.length,
           topics: items.filter(i => i.type === 'topic').length,
@@ -110,7 +111,13 @@ export default function CycleDetail() {
             {weekGroups.map((week) => (
               <Card
                 key={week.weekNumber}
-                onClick={() => setLocation(`/cycle/${cycleId}/week/${week.weekNumber}`)}
+                onClick={() => {
+                  if (isIntroduction && (week as any).itemId) {
+                    setLocation(`/item/${(week as any).itemId}`);
+                  } else {
+                    setLocation(`/cycle/${cycleId}/week/${week.weekNumber}`);
+                  }
+                }}
                 className="group cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border-2 border-border bg-card touch-manipulation relative"
               >
                 {/* Background Image */}

@@ -1,0 +1,9 @@
+{
+  "query": "-- Apagar conteúdos do Ciclo 0\nDELETE c FROM contents c\nJOIN weeks w ON c.weekId = w.id\nWHERE w.cycleId = 90001;\n\n-- Apagar itens do Ciclo 0\nDELETE FROM weeks WHERE cycleId = 90001;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute -- Apagar conteúdos do Ciclo 0\nDELETE c FROM contents c\nJOIN weeks w ON c.weekId = w.id\nWHERE w.cycleId = 90001;\n\n-- Apagar itens do Ciclo 0\nDELETE FROM weeks WHERE cycleId = 90001;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 109
+}
