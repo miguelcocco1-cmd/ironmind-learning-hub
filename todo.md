@@ -175,3 +175,9 @@
 - [x] Adicionar área a todos os 108 itens (tópicos e exercícios)
 - [x] Distribuir 5 áreas sequencialmente por ordem (Mental Foundation, Focus Lock, Pressure Release, Mental Strength, Mental Recovery)
 - [x] Atualizar frontend para mostrar overlay em todos os itens
+
+## Ajuste do Overlay de Texto
+- [x] Remover fundo preto dos textos do overlay (substituído por drop-shadow)
+- [x] Mover nome da área para canto superior direito
+- [x] Mover "IRON MIND Training Lab" para canto inferior direito
+- [x] Reduzir tamanho dos textos (10px para área, 9px para IRON MIND)
