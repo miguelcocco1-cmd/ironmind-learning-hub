@@ -45,6 +45,9 @@ export default function CycleDetail() {
   // Para o ciclo de Introdução (order=0), mostrar secções personalizadas
   const isIntroduction = cycle?.order === 0;
   
+  // Sessão de Hipnose (weekNumber = 0, weekGroup = 0)
+  const hypnosisSession = allWeeks?.find(w => w.weekNumber === 0 && w.weekGroup === 0);
+  
   // Agrupar itens por semana (weekGroup 1-4) ou criar cards personalizados para Introdução
   const weekGroups = isIntroduction 
     ? [1, 2, 3, 4].map(weekNum => {
@@ -101,6 +104,51 @@ export default function CycleDetail() {
             </p>
           )}
         </div>
+
+        {/* Sessão de Hipnose (se existir) */}
+        {hypnosisSession && !isIntroduction && (
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">
+              Sessão de Hipnose
+            </h2>
+            <Card
+              onClick={() => setLocation(`/item/${hypnosisSession.id}`)}
+              className="group cursor-pointer hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden border-2 border-purple-500/50 bg-gradient-to-br from-purple-900/20 to-indigo-900/20 touch-manipulation relative"
+            >
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-300"
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800)` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-950/90 via-purple-900/60 to-transparent" />
+              
+              <div className="relative z-10 p-6 md:p-8">
+                {/* Badge Especial */}
+                <div className="inline-block px-3 py-1 mb-4 bg-purple-500/30 border border-purple-400/50 rounded-full">
+                  <span className="text-xs md:text-sm font-semibold text-purple-200">🧠 Sessão Especial
+                  </span>
+                </div>
+
+                {/* Hypnosis Title */}
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-purple-200 transition-colors leading-tight">
+                  {hypnosisSession.title}
+                </h3>
+                
+                {hypnosisSession.description && (
+                  <p className="text-sm md:text-base text-white/80 mb-4 md:mb-6 leading-relaxed">
+                    {hypnosisSession.description}
+                  </p>
+                )}
+
+                {/* Call to Action */}
+                <div className="flex items-center gap-2 text-purple-200 font-semibold group-hover:gap-4 transition-all text-sm md:text-base">
+                  Iniciar Sessão
+                  <ChevronRight className="h-5 w-5" />
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
 
         {/* 4 Semanas ou Secções */}
         <div>

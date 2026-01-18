@@ -147,3 +147,35 @@ export const userCycleProgress = mysqlTable("user_cycle_progress", {
 
 export type UserCycleProgress = typeof userCycleProgress.$inferSelect;
 export type InsertUserCycleProgress = typeof userCycleProgress.$inferInsert;
+
+/**
+ * Badges/Conquistas disponíveis na plataforma
+ */
+export const badges = mysqlTable("badges", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description").notNull(),
+  icon: varchar("icon", { length: 100 }).notNull(), // Nome do ícone (ex: "trophy", "fire", "star")
+  color: varchar("color", { length: 50 }).notNull(), // Cor do badge (ex: "gold", "silver", "bronze")
+  type: mysqlEnum("type", ["streak", "completion", "milestone", "special"]).notNull(),
+  requirement: text("requirement"), // Descrição do requisito para ganhar o badge
+  order: int("order").notNull(), // Ordem de exibição
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Badge = typeof badges.$inferSelect;
+export type InsertBadge = typeof badges.$inferInsert;
+
+/**
+ * Badges conquistados pelos utilizadores
+ */
+export const userBadges = mysqlTable("user_badges", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  badgeId: int("badgeId").notNull(),
+  earnedAt: timestamp("earnedAt").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type UserBadge = typeof userBadges.$inferSelect;
+export type InsertUserBadge = typeof userBadges.$inferInsert;

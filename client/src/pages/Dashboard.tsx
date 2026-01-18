@@ -2,14 +2,42 @@ import { Navbar } from "@/components/Navbar";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { trpc } from "@/lib/trpc";
-import { Loader2, BookOpen, CheckCircle, Clock, Trophy } from "lucide-react";
+import { Loader2, BookOpen, CheckCircle, Clock, Trophy, Award, Star, Flame, Target, Compass, Brain, Crown } from "lucide-react";
 
 export default function Dashboard() {
   const { data: cycles, isLoading: cyclesLoading } = trpc.cycles.list.useQuery();
   const { data: progress, isLoading: progressLoading } = trpc.progress.getMyProgress.useQuery();
   const { data: submissions, isLoading: submissionsLoading } = trpc.exercises.mySubmissions.useQuery();
+  const { data: allBadges, isLoading: badgesLoading } = trpc.badges.list.useQuery();
+  const { data: userBadges, isLoading: userBadgesLoading } = trpc.badges.getUserBadges.useQuery(
+    { userId: 1 }, // TODO: usar ctx.user.id quando autenticação estiver ativa
+    { enabled: true }
+  );
+  
+  // Mapa de ícones para badges
+  const badgeIcons: Record<string, any> = {
+    star: Star,
+    fire: Flame,
+    trophy: Trophy,
+    crown: Crown,
+    target: Target,
+    flame: Flame,
+    compass: Compass,
+    brain: Brain,
+  };
+  
+  // Mapa de cores para badges
+  const badgeColors: Record<string, string> = {
+    gold: "text-yellow-500 bg-yellow-500/10",
+    orange: "text-orange-500 bg-orange-500/10",
+    green: "text-green-500 bg-green-500/10",
+    purple: "text-purple-500 bg-purple-500/10",
+    red: "text-red-500 bg-red-500/10",
+    blue: "text-blue-500 bg-blue-500/10",
+    indigo: "text-indigo-500 bg-indigo-500/10",
+  };
 
-  if (cyclesLoading || progressLoading || submissionsLoading) {
+  if (cyclesLoading || progressLoading || submissionsLoading || badgesLoading || userBadgesLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -87,6 +115,62 @@ export default function Dashboard() {
             </div>
           </Card>
         </div>
+
+        {/* Badges/Conquistas */}
+        <Card className="p-6 mb-12 bg-card border-border">
+          <div className="flex items-center gap-3 mb-6">
+            <Award className="h-6 w-6 text-yellow-500" />
+            <h2 className="text-2xl font-bold text-foreground">Minhas Conquistas</h2>
+          </div>
+          
+          {allBadges && allBadges.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {allBadges.map((badge) => {
+                const earned = userBadges?.some(ub => ub.badgeId === badge.id);
+                const Icon = badgeIcons[badge.icon] || Award;
+                const colorClass = badgeColors[badge.color] || "text-gray-500 bg-gray-500/10";
+                
+                return (
+                  <div
+                    key={badge.id}
+                    className={`p-4 rounded-lg border-2 transition-all ${
+                      earned 
+                        ? `${colorClass} border-current` 
+                        : "bg-gray-900/20 border-gray-800 opacity-40"
+                    }`}
+                  >
+                    <div className="flex flex-col items-center text-center gap-2">
+                      <div className={`p-3 rounded-full ${
+                        earned ? colorClass : "bg-gray-800 text-gray-600"
+                      }`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <p className={`font-bold text-sm ${
+                          earned ? "text-foreground" : "text-muted-foreground"
+                        }`}>
+                          {badge.name}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                          {badge.description}
+                        </p>
+                      </div>
+                      {earned && (
+                        <div className="mt-2">
+                          <span className="text-xs font-semibold text-green-500">✓ Conquistado</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-center py-8">
+              Nenhum badge disponível ainda.
+            </p>
+          )}
+        </Card>
 
         {/* Overall Progress */}
         <Card className="p-6 mb-12 bg-card border-border">

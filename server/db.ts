@@ -10,13 +10,17 @@ import {
   userContentProgress,
   exerciseSubmissions,
   userCycleProgress,
+  badges,
+  userBadges,
   InsertCycle,
   InsertWeek,
   InsertContent,
   InsertExercise,
   InsertUserContentProgress,
   InsertExerciseSubmission,
-  InsertUserCycleProgress
+  InsertUserCycleProgress,
+  InsertBadge,
+  InsertUserBadge
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -258,5 +262,57 @@ export async function createExerciseSubmission(submission: InsertExerciseSubmiss
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   const result = await db.insert(exerciseSubmissions).values(submission);
+  return result;
+}
+
+// ============= BADGE FUNCTIONS =============
+
+export async function getAllBadges() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(badges).orderBy(asc(badges.order));
+}
+
+export async function getUserBadges(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  // Join userBadges with badges to get full badge info
+  const result = await db
+    .select({
+      id: userBadges.id,
+      userId: userBadges.userId,
+      badgeId: userBadges.badgeId,
+      earnedAt: userBadges.earnedAt,
+      badge: badges
+    })
+    .from(userBadges)
+    .leftJoin(badges, eq(userBadges.badgeId, badges.id))
+    .where(eq(userBadges.userId, userId))
+    .orderBy(desc(userBadges.earnedAt));
+  
+  return result;
+}
+
+export async function awardBadge(userId: number, badgeId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  // Check if user already has this badge
+  const existing = await db
+    .select()
+    .from(userBadges)
+    .where(and(eq(userBadges.userId, userId), eq(userBadges.badgeId, badgeId)))
+    .limit(1);
+  
+  if (existing.length > 0) {
+    return existing[0]; // Already has badge
+  }
+  
+  const result = await db.insert(userBadges).values({
+    userId,
+    badgeId,
+  });
+  
   return result;
 }

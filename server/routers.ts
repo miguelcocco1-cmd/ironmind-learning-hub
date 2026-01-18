@@ -200,6 +200,28 @@ listByCycle: publicProcedure
         return await db.getUserContentProgress(ctx.user.id, input.contentId);
       }),
   }),
+
+  // ============= BADGES =============
+  badges: router({
+    list: publicProcedure.query(async () => {
+      return await db.getAllBadges();
+    }),
+    
+    getUserBadges: protectedProcedure
+      .input(z.object({ userId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getUserBadges(input.userId);
+      }),
+    
+    awardBadge: protectedProcedure
+      .input(z.object({
+        userId: z.number(),
+        badgeId: z.number(),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.awardBadge(input.userId, input.badgeId);
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

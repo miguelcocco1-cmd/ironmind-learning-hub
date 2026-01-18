@@ -185,3 +185,19 @@
 ## Correção de Posicionamento do Overlay
 - [x] Mover nome da área para canto superior ESQUERDO
 - [x] Reduzir ainda mais o tamanho da letra
+
+## Sistema de Badges (Gamificação)
+- [x] Criar tabela de badges na base de dados
+- [x] Criar tabela de user_badges (relação muitos-para-muitos)
+- [x] Definir badges iniciais (Primeira Semana, Streak 7 dias, Ciclo Completo, etc.)
+- [ ] Implementar lógica de atribuição automática de badges
+- [x] Criar componente visual de badges no frontend
+- [x] Mostrar badges no perfil do utilizador
+- [ ] Adicionar notificação quando ganha novo badge
+
+## Sessão de Hipnose por Ciclo
+- [x] Adicionar campo especial para "Sessão de Hipnose" antes da Semana 1
+- [x] Criar 6 sessões de hipnose (uma por ciclo)
+- [x] Posicionar sessão de hipnose como card especial antes das 4 semanas
+- [x] Design diferenciado para destacar sessão de hipnose
+- [ ] Adicionar áudio de hipnose personalizado para cada ciclo
