@@ -92,8 +92,8 @@ export default function WeekDetail() {
             const topicImageIndex = ((item.weekNumber || index) % 5) + 1;
             const thumbnail = isLive ? "/live-class-cinematic.jpg" : `/topic-${topicImageIndex}.jpg`;
             
-            // Itens das semanas 2, 3, 4 estão bloqueados
-            const isAccessible = item.weekGroup === 1;
+            // Apenas Ciclo 1 Semana 1 está acessível, todo o resto bloqueado
+            const isAccessible = cycleId === 30001 && item.weekGroup === 1;
             
             return (
               <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>

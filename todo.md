@@ -147,3 +147,8 @@
 - [x] Criar 18 itens (weeks) para cada ciclo (Ciclos 2, 3, 4, 5, 6)
 - [x] Criar conteúdos (vídeos, áudios, PDFs) para cada item
 - [x] Configurar Semana 1 como acessível e Semanas 2-4 como bloqueadas
+
+## Bloqueio Total dos Ciclos 2-6
+- [x] Bloquear todos os conteúdos de todas as semanas dos Ciclos 2-6
+- [x] Manter apenas Semana 1 do Ciclo 1 acessível
+- [x] Ajustar lógica do frontend para considerar cycleId no bloqueio
