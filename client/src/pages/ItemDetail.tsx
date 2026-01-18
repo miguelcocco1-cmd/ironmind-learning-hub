@@ -134,11 +134,6 @@ export default function ItemDetail() {
                             )}
                             <div className="flex items-center gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground">
                               <span className="capitalize">{content.type}</span>
-                              {content.duration && (
-                                <span>
-                                  {Math.floor(content.duration / 60)} min
-                                </span>
-                              )}
                             </div>
                           </div>
                         </div>

@@ -77,9 +77,6 @@ export function WeekSection({ weekNumber, title, description, contents }: WeekSe
                   )}
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <span className="capitalize">{content.type}</span>
-                    {content.duration && (
-                      <span>{formatDuration(content.duration)}</span>
-                    )}
                     {content.completed && (
                       <div className="flex items-center gap-1 text-green-600">
                         <CheckCircle className="h-4 w-4" />

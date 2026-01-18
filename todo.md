@@ -119,3 +119,6 @@
 - [x] Criar 4 secções personalizadas com títulos específicos
 - [ ] Corrigir visualização dos títulos nos cards (ainda mostra "Semana X")
 - [x] Adicionar conteúdos às 4 secções
+
+## Remoção de Durações
+- [x] Remover todas as durações (15 min, 10 min, etc.) dos cards de vídeo e áudio

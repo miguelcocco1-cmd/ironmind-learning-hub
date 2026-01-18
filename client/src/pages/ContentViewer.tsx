@@ -164,14 +164,7 @@ export default function ContentViewer() {
           )}
         </div>
 
-        {/* Additional Info */}
-        {content.duration && (
-          <div className="max-w-5xl mx-auto mt-6">
-            <p className="text-sm text-muted-foreground">
-              Duração: {Math.floor(content.duration / 60)} minutos
-            </p>
-          </div>
-        )}
+
       </div>
     </div>
   );
