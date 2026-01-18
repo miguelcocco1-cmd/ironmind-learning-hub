@@ -1,0 +1,45 @@
+{
+  "query": "SELECT id, title, type, weekGroup, isPublished FROM weeks WHERE type = 'live' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, type, weekGroup, isPublished FROM weeks WHERE type = 'live' LIMIT 5;",
+  "rows": [
+    {
+      "id": "60001",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "type": "live",
+      "weekGroup": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "60002",
+      "title": "Aula 2 IRON MIND Training Lab",
+      "type": "live",
+      "weekGroup": "2",
+      "isPublished": "1"
+    },
+    {
+      "id": "60003",
+      "title": "Aula 3 IRON MIND Training Lab",
+      "type": "live",
+      "weekGroup": "3",
+      "isPublished": "1"
+    },
+    {
+      "id": "60004",
+      "title": "Aula 4 IRON MIND Training Lab",
+      "type": "live",
+      "weekGroup": "4",
+      "isPublished": "1"
+    },
+    {
+      "id": "60005",
+      "title": "Aula 5 IRON MIND Training Lab",
+      "type": "live",
+      "weekGroup": "1",
+      "isPublished": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttype\tweekGroup\tisPublished\n60001\tAula 1 IRON MIND Training Lab\tlive\t1\t1\n60002\tAula 2 IRON MIND Training Lab\tlive\t2\t1\n60003\tAula 3 IRON MIND Training Lab\tlive\t3\t1\n60004\tAula 4 IRON MIND Training Lab\tlive\t4\t1\n60005\tAula 5 IRON MIND Training Lab\tlive\t1\t1\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

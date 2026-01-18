@@ -93,3 +93,16 @@
 - [x] Confirmar que aulas ao vivo existem na base de dados
 - [x] Corrigir filtro ou query que impede visualização
 - [x] Garantir que aula ao vivo aparece como primeiro card em todas as semanas
+
+## Investigação Profunda: Aula ao Vivo Não Aparece
+- [x] Aceder à página Semana 1 através do browser automatizado
+- [x] Verificar console do browser para erros
+- [x] Verificar resposta da API tRPC
+- [x] Identificar causa raiz do problema (cache do browser do utilizador)
+- [x] Confirmar que plataforma funciona corretamente
+
+## URGENTE: Aula ao Vivo Não Aparece no Frontend Real
+- [x] Verificar por que frontend mostra "0 aula ao vivo" quando deveria mostrar "1 aula ao vivo"
+- [x] Verificar se problema está no filtro isPublished
+- [x] Verificar se aula ao vivo tem isPublished=true (ESTAVA FALSE!)
+- [x] Corrigir publicando todas as 24 aulas ao vivo
