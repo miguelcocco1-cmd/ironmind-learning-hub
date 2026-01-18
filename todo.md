@@ -181,3 +181,7 @@
 - [x] Mover nome da área para canto superior direito
 - [x] Mover "IRON MIND Training Lab" para canto inferior direito
 - [x] Reduzir tamanho dos textos (10px para área, 9px para IRON MIND)
+
+## Correção de Posicionamento do Overlay
+- [x] Mover nome da área para canto superior ESQUERDO
+- [x] Reduzir ainda mais o tamanho da letra

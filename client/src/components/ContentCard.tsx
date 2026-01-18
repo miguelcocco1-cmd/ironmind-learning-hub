@@ -71,15 +71,15 @@ export function ContentCard({
         {/* Overlay de Texto para Exercícios com Área */}
         {area && (
           <div className="absolute inset-0 z-10 pointer-events-none">
-            {/* Nome da Área - Canto Superior Direito */}
-            <div className="absolute top-2 right-2 md:top-3 md:right-3">
-              <p className="text-[10px] md:text-xs font-bold text-white uppercase tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            {/* Nome da Área - Canto Superior Esquerdo */}
+            <div className="absolute top-2 left-2 md:top-3 md:left-3">
+              <p className="text-[8px] md:text-[9px] font-bold text-white uppercase tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 {areaNames[area] || area}
               </p>
             </div>
             {/* IRON MIND Training Lab - Canto Inferior Direito */}
             <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3">
-              <p className="text-[9px] md:text-[10px] font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              <p className="text-[7px] md:text-[8px] font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 IRON MIND Training Lab
               </p>
             </div>
