@@ -157,3 +157,9 @@
 - [x] Criar estrutura especial onde cada secção mostra conteúdos diretamente
 - [x] Ajustar CycleDetail.tsx para navegar diretamente para conteúdos no Ciclo 0
 - [x] Remover navegação intermediária de itens no Ciclo 0
+
+## Sistema de Quiz
+- [x] Adicionar tipo "quiz" ao enum de conteúdos
+- [x] Criar quizzes para todos os itens dos Ciclos 1-6 (90 quizzes)
+- [x] Atualizar ItemDetail.tsx para mostrar card de Quiz
+- [x] Criar página de Quiz com perguntas e avaliação (5 perguntas, resultado com percentagem)

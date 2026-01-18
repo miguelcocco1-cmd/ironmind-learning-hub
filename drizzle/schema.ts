@@ -64,7 +64,7 @@ export const contents = mysqlTable("contents", {
   weekId: int("weekId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
-  type: mysqlEnum("type", ["video", "audio", "pdf"]).notNull(),
+  type: mysqlEnum("type", ["video", "audio", "pdf", "quiz"]).notNull(),
   url: text("url").notNull(), // URL do YouTube/Vimeo ou link do arquivo
   duration: int("duration"), // Duração em segundos (para vídeos/áudios)
   order: int("order").notNull(), // Ordem de apresentação dentro da semana

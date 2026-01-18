@@ -12,6 +12,7 @@ import ItemDetail from "./pages/ItemDetail";
 import ContentViewer from "./pages/ContentViewer";
 import ExerciseViewer from "./pages/ExerciseViewer";
 import Dashboard from "./pages/Dashboard";
+import QuizPage from "./pages/QuizPage";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -24,6 +25,7 @@ function Router() {
       <Route path={"/item/:id"} component={ItemDetail} />
       <Route path={"/content/:id"} component={ContentViewer} />
       <Route path={"/exercise/:id"} component={ExerciseViewer} />
+      <Route path={"/quiz/:contentId"} component={QuizPage} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

@@ -120,7 +120,14 @@ export default function ItemDetail() {
                           ? 'hover:border-primary cursor-pointer' 
                           : 'cursor-not-allowed opacity-75'
                       }`}
-                      onClick={() => content.isAccessible && setLocation(`/content/${content.id}`)}
+                      onClick={() => {
+                        if (!content.isAccessible) return;
+                        if (content.type === 'quiz') {
+                          setLocation(`/quiz/${content.id}`);
+                        } else {
+                          setLocation(`/content/${content.id}`);
+                        }
+                      }}
                     >
                       {/* Overlay de Bloqueio */}
                       {!content.isAccessible && (
