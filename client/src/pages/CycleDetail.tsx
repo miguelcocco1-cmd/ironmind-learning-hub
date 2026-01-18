@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { useLocation, useRoute } from "wouter";
-import { Loader2, ArrowLeft, ChevronRight } from "lucide-react";
+import { Loader2, ArrowLeft, ChevronRight, Lock } from "lucide-react";
 
 export default function CycleDetail() {
   const [, params] = useRoute("/cycle/:id");
@@ -58,16 +58,19 @@ export default function CycleDetail() {
           totalItems: items.length,
           topics: items.filter(i => i.type === 'topic').length,
           exercises: 0,
+          isAccessible: item?.isAccessible ?? true,
         };
       })
     : [1, 2, 3, 4].map(weekNum => {
         const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
+        const firstItem = items[0];
         return {
           weekNumber: weekNum,
           items,
           totalItems: items.length,
           topics: items.filter(i => i.type === 'topic').length,
           exercises: items.filter(i => i.type === 'exercise').length,
+          isAccessible: firstItem?.isAccessible ?? true,
         };
       });
 
@@ -107,8 +110,12 @@ export default function CycleDetail() {
             {weekGroups.map((week) => (
               <Card
                 key={week.weekNumber}
-                onClick={() => setLocation(`/cycle/${cycleId}/week/${week.weekNumber}`)}
-                className="group cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border-2 border-border bg-card touch-manipulation relative"
+                onClick={() => week.isAccessible && setLocation(`/cycle/${cycleId}/week/${week.weekNumber}`)}
+                className={`group overflow-hidden border-2 border-border bg-card touch-manipulation relative transition-all duration-300 ${
+                  week.isAccessible 
+                    ? 'cursor-pointer hover:scale-105 active:scale-95' 
+                    : 'cursor-not-allowed opacity-75'
+                }`}
               >
                 {/* Background Image */}
                 <div 
@@ -116,6 +123,14 @@ export default function CycleDetail() {
                   style={{ backgroundImage: `url(/week-${week.weekNumber}-bg.jpg)` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                
+                {/* Overlay de Bloqueio */}
+                {!week.isAccessible && (
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 flex flex-col items-center justify-center">
+                    <Lock className="h-12 w-12 md:h-16 md:w-16 text-white/80 mb-3 md:mb-4" />
+                    <p className="text-lg md:text-xl font-semibold text-white">Brevemente Disponível</p>
+                  </div>
+                )}
                 
                 <div className="relative z-10 p-6 md:p-8">
                   {/* Week Number */}

@@ -122,3 +122,10 @@
 
 ## Remoção de Durações
 - [x] Remover todas as durações (15 min, 10 min, etc.) dos cards de vídeo e áudio
+
+## Sistema de Bloqueio de Semanas
+- [x] Adicionar campo isAccessible à tabela weeks
+- [x] Configurar Semana 1 de todos os ciclos como acessível
+- [x] Configurar Semanas 2, 3, 4 como bloqueadas
+- [x] Implementar overlay "🔒 Brevemente Disponível" nos cards bloqueados
+- [x] Desativar clique nos cards bloqueados
