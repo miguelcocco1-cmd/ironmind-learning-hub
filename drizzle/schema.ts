@@ -46,7 +46,7 @@ export const weeks = mysqlTable("weeks", {
   description: text("description"),
   weekNumber: int("weekNumber").notNull(), // Número do item dentro do ciclo (1-18)
   weekGroup: int("weekGroup").notNull(), // Agrupamento semanal (1-4): cada ciclo tem 4 semanas
-  type: mysqlEnum("type", ["topic", "exercise"]).notNull(), // Tópico teórico ou exercício prático
+  type: mysqlEnum("type", ["live", "topic", "exercise"]).notNull(), // Aula ao vivo, tópico teórico ou exercício prático
   isPublished: boolean("isPublished").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),

@@ -85,7 +85,9 @@ export default function ItemDetail() {
         {/* Item Header */}
         <div className="mb-8 md:mb-12">
           <div className="text-sm md:text-base text-muted-foreground mb-2">
-            {item.type === 'topic' ? 'Tópico' : 'Exercício'} {item.weekNumber}
+            {item.type === 'live' ? '🔴 AULA AO VIVO' : 
+             item.type === 'topic' ? `Tópico ${item.weekNumber}` : 
+             `Exercício ${item.weekNumber}`}
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
             {item.title}

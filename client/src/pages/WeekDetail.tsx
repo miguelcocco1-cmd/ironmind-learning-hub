@@ -21,8 +21,14 @@ export default function WeekDetail() {
     { enabled: cycleId > 0 }
   );
 
-  // Filtrar itens da semana específica
-  const weekItems = allWeeks?.filter(w => w.weekGroup === weekNumber) || [];
+  // Filtrar itens da semana específica e ordenar (aulas ao vivo primeiro)
+  const weekItems = (allWeeks?.filter(w => w.weekGroup === weekNumber) || [])
+    .sort((a, b) => {
+      // Aulas ao vivo (weekNumber = 0) sempre primeiro
+      if (a.weekNumber === 0) return -1;
+      if (b.weekNumber === 0) return 1;
+      return a.weekNumber - b.weekNumber;
+    });
 
   if (weeksLoading) {
     return (
@@ -70,19 +76,29 @@ export default function WeekDetail() {
             Semana {weekNumber}
           </h1>
           <p className="text-base md:text-lg text-muted-foreground">
-            {weekItems.length} itens • {weekItems.filter(i => i.type === 'topic').length} tópicos • {weekItems.filter(i => i.type === 'exercise').length} exercícios
+            {weekItems.length} itens • {weekItems.filter(i => i.type === 'live').length} aula ao vivo • {weekItems.filter(i => i.type === 'topic').length} tópicos • {weekItems.filter(i => i.type === 'exercise').length} exercícios
           </p>
         </div>
 
         {/* Items Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-          {weekItems.map((item) => (
-            <ContentCard
-              key={item.id}
-              title={`${item.type === 'topic' ? 'Tópico' : 'Exercício'} ${item.weekNumber}: ${item.title}`}
-              onClick={() => setLocation(`/item/${item.id}`)}
-            />
-          ))}
+          {weekItems.map((item) => {
+            const isLive = item.type === 'live';
+            const itemLabel = item.type === 'live' ? '🔴 AO VIVO' : 
+                             item.type === 'topic' ? `Tópico ${item.weekNumber}` : 
+                             `Exercício ${item.weekNumber}`;
+            
+            return (
+              <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>
+                <ContentCard
+                  title={`${itemLabel}: ${item.title}`}
+                  thumbnail={isLive ? "/live-class-thumbnail.jpg" : undefined}
+                  onClick={() => setLocation(`/item/${item.id}`)}
+                  className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

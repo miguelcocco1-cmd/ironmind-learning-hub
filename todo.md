@@ -67,3 +67,10 @@
 - [x] Criar página WeekDetail para mostrar conteúdos de uma semana específica
 - [x] Atualizar routers para suportar navegação Ciclo → Semana → Conteúdos
 - [x] Popular base de dados distribuindo os 18 itens pelas 4 semanas de cada ciclo
+
+## Aulas ao Vivo
+- [x] Procurar imagem adequada para aulas ao vivo
+- [x] Adicionar tipo "live" ao schema de weeks
+- [x] Criar 24 itens de "Aula ao Vivo" (4 semanas × 6 ciclos)
+- [x] Posicionar aulas como primeiro item de cada semana
+- [x] Destacar visualmente as aulas ao vivo na interface

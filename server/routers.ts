@@ -71,7 +71,7 @@ listByCycle: publicProcedure
         description: z.string().optional(),
         weekNumber: z.number(),
         weekGroup: z.number().min(1).max(4), // Semana dentro do ciclo (1-4)
-        type: z.enum(["topic", "exercise"]),
+        type: z.enum(["live", "topic", "exercise"]),
         isPublished: z.boolean().default(false),
       }))
       .mutation(async ({ input }) => {
