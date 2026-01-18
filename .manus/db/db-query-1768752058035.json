@@ -1,0 +1,38 @@
+{
+  "query": "SELECT id, weekNumber, weekGroup, type, title FROM weeks WHERE cycleId = 1 ORDER BY weekGroup, weekNumber ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, weekNumber, weekGroup, type, title FROM weeks WHERE cycleId = 1 ORDER BY weekGroup, weekNumber ASC;",
+  "rows": [
+    {
+      "id": "60001",
+      "weekNumber": "0",
+      "weekGroup": "1",
+      "type": "live",
+      "title": "Aula 1 IRON MIND Training Lab"
+    },
+    {
+      "id": "60002",
+      "weekNumber": "0",
+      "weekGroup": "2",
+      "type": "live",
+      "title": "Aula 2 IRON MIND Training Lab"
+    },
+    {
+      "id": "60003",
+      "weekNumber": "0",
+      "weekGroup": "3",
+      "type": "live",
+      "title": "Aula 3 IRON MIND Training Lab"
+    },
+    {
+      "id": "60004",
+      "weekNumber": "0",
+      "weekGroup": "4",
+      "type": "live",
+      "title": "Aula 4 IRON MIND Training Lab"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tweekNumber\tweekGroup\ttype\ttitle\n60001\t0\t1\tlive\tAula 1 IRON MIND Training Lab\n60002\t0\t2\tlive\tAula 2 IRON MIND Training Lab\n60003\t0\t3\tlive\tAula 3 IRON MIND Training Lab\n60004\t0\t4\tlive\tAula 4 IRON MIND Training Lab\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

@@ -1,0 +1,90 @@
+{
+  "query": "SELECT id, cycleId, weekGroup, weekNumber, type, title FROM weeks WHERE type = 'live' ORDER BY cycleId, weekGroup LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, cycleId, weekGroup, weekNumber, type, title FROM weeks WHERE type = 'live' ORDER BY cycleId, weekGroup LIMIT 10;",
+  "rows": [
+    {
+      "id": "60001",
+      "cycleId": "1",
+      "weekGroup": "1",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 1 IRON MIND Training Lab"
+    },
+    {
+      "id": "60002",
+      "cycleId": "1",
+      "weekGroup": "2",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 2 IRON MIND Training Lab"
+    },
+    {
+      "id": "60003",
+      "cycleId": "1",
+      "weekGroup": "3",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 3 IRON MIND Training Lab"
+    },
+    {
+      "id": "60004",
+      "cycleId": "1",
+      "weekGroup": "4",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 4 IRON MIND Training Lab"
+    },
+    {
+      "id": "60005",
+      "cycleId": "2",
+      "weekGroup": "1",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 5 IRON MIND Training Lab"
+    },
+    {
+      "id": "60006",
+      "cycleId": "2",
+      "weekGroup": "2",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 6 IRON MIND Training Lab"
+    },
+    {
+      "id": "60007",
+      "cycleId": "2",
+      "weekGroup": "3",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 7 IRON MIND Training Lab"
+    },
+    {
+      "id": "60008",
+      "cycleId": "2",
+      "weekGroup": "4",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 8 IRON MIND Training Lab"
+    },
+    {
+      "id": "60009",
+      "cycleId": "3",
+      "weekGroup": "1",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 9 IRON MIND Training Lab"
+    },
+    {
+      "id": "60010",
+      "cycleId": "3",
+      "weekGroup": "2",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 10 IRON MIND Training Lab"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcycleId\tweekGroup\tweekNumber\ttype\ttitle\n60001\t1\t1\t0\tlive\tAula 1 IRON MIND Training Lab\n60002\t1\t2\t0\tlive\tAula 2 IRON MIND Training Lab\n60003\t1\t3\t0\tlive\tAula 3 IRON MIND Training Lab\n60004\t1\t4\t0\tlive\tAula 4 IRON MIND Training Lab\n60005\t2\t1\t0\tlive\tAula 5 IRON MIND Training Lab\n60006\t2\t2\t0\tlive\tAula 6 IRON MIND Training Lab\n60007\t2\t3\t0\tlive\tAula 7 IRON MIND Training Lab\n60008\t2\t4\t0\tlive\tAula 8 IRON MIND Training Lab\n60009\t3\t1\t0\tlive\tAula 9 IRON MIND Training Lab\n60010\t3\t2\t0\tlive\tAula 10 IRON MIND Training Lab\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

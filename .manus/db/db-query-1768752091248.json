@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, weekNumber, weekGroup, type, title, isPublished FROM weeks WHERE cycleId = 1 AND weekGroup = 1 ORDER BY weekNumber ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, weekNumber, weekGroup, type, title, isPublished FROM weeks WHERE cycleId = 1 AND weekGroup = 1 ORDER BY weekNumber ASC;",
+  "rows": [
+    {
+      "id": "60001",
+      "weekNumber": "0",
+      "weekGroup": "1",
+      "type": "live",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "isPublished": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tweekNumber\tweekGroup\ttype\ttitle\tisPublished\n60001\t0\t1\tlive\tAula 1 IRON MIND Training Lab\t1\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

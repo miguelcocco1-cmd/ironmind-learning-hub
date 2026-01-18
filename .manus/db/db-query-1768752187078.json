@@ -1,0 +1,46 @@
+{
+  "query": "SELECT id, weekNumber, type, title FROM weeks WHERE cycleId = 1 AND weekGroup = 1 ORDER BY weekNumber ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, weekNumber, type, title FROM weeks WHERE cycleId = 1 AND weekGroup = 1 ORDER BY weekNumber ASC;",
+  "rows": [
+    {
+      "id": "60001",
+      "weekNumber": "0",
+      "type": "live",
+      "title": "Aula 1 IRON MIND Training Lab"
+    },
+    {
+      "id": "60025",
+      "weekNumber": "1",
+      "type": "topic",
+      "title": "Tópico 1: Fundação Mental"
+    },
+    {
+      "id": "60026",
+      "weekNumber": "2",
+      "type": "topic",
+      "title": "Tópico 2: Fundação Mental"
+    },
+    {
+      "id": "60027",
+      "weekNumber": "3",
+      "type": "topic",
+      "title": "Tópico 3: Fundação Mental"
+    },
+    {
+      "id": "60028",
+      "weekNumber": "4",
+      "type": "topic",
+      "title": "Tópico 4: Fundação Mental"
+    },
+    {
+      "id": "60029",
+      "weekNumber": "5",
+      "type": "topic",
+      "title": "Tópico 5: Fundação Mental"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tweekNumber\ttype\ttitle\n60001\t0\tlive\tAula 1 IRON MIND Training Lab\n60025\t1\ttopic\tTópico 1: Fundação Mental\n60026\t2\ttopic\tTópico 2: Fundação Mental\n60027\t3\ttopic\tTópico 3: Fundação Mental\n60028\t4\ttopic\tTópico 4: Fundação Mental\n60029\t5\ttopic\tTópico 5: Fundação Mental\n",
+  "stderr": "",
+  "execution_time_ms": 48
+}

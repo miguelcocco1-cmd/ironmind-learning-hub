@@ -92,7 +92,7 @@ export default function WeekDetail() {
               <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>
                 <ContentCard
                   title={`${itemLabel}: ${item.title}`}
-                  thumbnail={isLive ? "/live-class-thumbnail.jpg" : undefined}
+                  thumbnail={isLive ? "/live-class-cinematic.jpg" : undefined}
                   onClick={() => setLocation(`/item/${item.id}`)}
                   className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
                 />

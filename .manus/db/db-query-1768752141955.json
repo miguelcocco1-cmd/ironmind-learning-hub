@@ -1,0 +1,100 @@
+{
+  "query": "SELECT cycleId, type, COUNT(*) as total FROM weeks GROUP BY cycleId, type ORDER BY cycleId, type;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT cycleId, type, COUNT(*) as total FROM weeks GROUP BY cycleId, type ORDER BY cycleId, type;",
+  "rows": [
+    {
+      "cycleId": "1",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "2",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "3",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "4",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "5",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "6",
+      "type": "live",
+      "total": "4"
+    },
+    {
+      "cycleId": "30001",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30001",
+      "type": "exercise",
+      "total": "6"
+    },
+    {
+      "cycleId": "30002",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30002",
+      "type": "exercise",
+      "total": "6"
+    },
+    {
+      "cycleId": "30003",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30003",
+      "type": "exercise",
+      "total": "6"
+    },
+    {
+      "cycleId": "30004",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30004",
+      "type": "exercise",
+      "total": "6"
+    },
+    {
+      "cycleId": "30005",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30005",
+      "type": "exercise",
+      "total": "6"
+    },
+    {
+      "cycleId": "30006",
+      "type": "topic",
+      "total": "12"
+    },
+    {
+      "cycleId": "30006",
+      "type": "exercise",
+      "total": "6"
+    }
+  ],
+  "messages": [],
+  "stdout": "cycleId\ttype\ttotal\n1\tlive\t4\n2\tlive\t4\n3\tlive\t4\n4\tlive\t4\n5\tlive\t4\n6\tlive\t4\n30001\ttopic\t12\n30001\texercise\t6\n30002\ttopic\t12\n30002\texercise\t6\n30003\ttopic\t12\n30003\texercise\t6\n30004\ttopic\t12\n30004\texercise\t6\n30005\ttopic\t12\n30005\texercise\t6\n30006\ttopic\t12\n30006\texercise\t6\n",
+  "stderr": "",
+  "execution_time_ms": 49
+}

@@ -74,3 +74,10 @@
 - [x] Criar 24 itens de "Aula ao Vivo" (4 semanas × 6 ciclos)
 - [x] Posicionar aulas como primeiro item de cada semana
 - [x] Destacar visualmente as aulas ao vivo na interface
+
+## Correção de Ordenação
+- [x] Gerar imagem cinematográfica personalizada para aulas ao vivo
+- [x] Verificar query de listagem de itens por semana
+- [x] Garantir que aulas ao vivo (weekNumber = 0) aparecem primeiro
+- [x] Adicionar tópicos e exercícios ao Ciclo 1
+- [ ] Adicionar tópicos e exercícios aos Ciclos 2-6
