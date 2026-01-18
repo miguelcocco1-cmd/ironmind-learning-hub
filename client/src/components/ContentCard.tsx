@@ -60,9 +60,11 @@ export function ContentCard({
 
         {/* Overlay de Bloqueio */}
         {!isAccessible && (
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 flex flex-col items-center justify-center">
-            <Lock className="h-10 w-10 md:h-12 md:w-12 text-white/80 mb-2 md:mb-3" />
-            <p className="text-sm md:text-base font-semibold text-white px-2 text-center">Brevemente Disponível</p>
+          <div className="absolute inset-0 bg-black/40 z-20 flex flex-col items-center justify-center">
+            <div className="bg-black/60 rounded-lg p-4 md:p-6 flex flex-col items-center">
+              <Lock className="h-10 w-10 md:h-12 md:w-12 text-white mb-2 md:mb-3" />
+              <p className="text-sm md:text-base font-semibold text-white px-2 text-center">Brevemente Disponível</p>
+            </div>
           </div>
         )}
 
