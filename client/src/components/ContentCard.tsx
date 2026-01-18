@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Play, CheckCircle } from "lucide-react";
+import { Play, CheckCircle, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ContentCardProps {
@@ -7,6 +7,7 @@ interface ContentCardProps {
   thumbnail?: string;
   duration?: number;
   completed?: boolean;
+  isAccessible?: boolean;
   onClick?: () => void;
   className?: string;
 }
@@ -16,6 +17,7 @@ export function ContentCard({
   thumbnail,
   duration,
   completed = false,
+  isAccessible = true,
   onClick,
   className,
 }: ContentCardProps) {
@@ -29,10 +31,13 @@ export function ContentCard({
   return (
     <Card
       className={cn(
-        "relative overflow-hidden cursor-pointer card-hover bg-card border-border group touch-manipulation active:scale-95 transition-transform",
+        "relative overflow-hidden bg-card border-border group touch-manipulation transition-transform",
+        isAccessible 
+          ? "cursor-pointer card-hover active:scale-95" 
+          : "cursor-not-allowed opacity-75",
         className
       )}
-      onClick={onClick}
+      onClick={() => isAccessible && onClick?.()}
     >
       {/* Thumbnail */}
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
@@ -52,6 +57,14 @@ export function ContentCard({
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Play className="h-12 w-12 md:h-16 md:w-16 text-white" />
         </div>
+
+        {/* Overlay de Bloqueio */}
+        {!isAccessible && (
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 flex flex-col items-center justify-center">
+            <Lock className="h-10 w-10 md:h-12 md:w-12 text-white/80 mb-2 md:mb-3" />
+            <p className="text-sm md:text-base font-semibold text-white px-2 text-center">Brevemente Disponível</p>
+          </div>
+        )}
 
         {/* Duration Badge */}
         {duration && (

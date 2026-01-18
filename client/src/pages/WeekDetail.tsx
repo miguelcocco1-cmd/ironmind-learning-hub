@@ -92,11 +92,15 @@ export default function WeekDetail() {
             const topicImageIndex = ((item.weekNumber || index) % 5) + 1;
             const thumbnail = isLive ? "/live-class-cinematic.jpg" : `/topic-${topicImageIndex}.jpg`;
             
+            // Itens das semanas 2, 3, 4 estão bloqueados
+            const isAccessible = item.weekGroup === 1;
+            
             return (
               <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>
                 <ContentCard
                   title={`${itemLabel}: ${item.title}`}
                   thumbnail={thumbnail}
+                  isAccessible={isAccessible}
                   onClick={() => setLocation(`/item/${item.id}`)}
                   className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
                 />

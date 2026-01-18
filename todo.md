@@ -129,3 +129,11 @@
 - [x] Configurar Semanas 2, 3, 4 como bloqueadas
 - [x] Implementar overlay "🔒 Brevemente Disponível" nos cards bloqueados
 - [x] Desativar clique nos cards bloqueados
+
+## Movimentação do Bloqueio para Nível de Itens
+- [x] Remover campo isAccessible da tabela weeks
+- [x] Adicionar campo isAccessible à tabela contents (não items)
+- [x] Remover overlay de bloqueio dos cards de semanas (CycleDetail.tsx)
+- [x] Adicionar overlay de bloqueio aos cards de itens (WeekDetail.tsx, ItemDetail.tsx e ContentCard.tsx)
+- [x] Configurar conteúdos da Semana 1 como acessíveis
+- [x] Configurar conteúdos das Semanas 2-4 como bloqueados

@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { trpc } from "@/lib/trpc";
 import { useLocation, useRoute } from "wouter";
-import { Loader2, ArrowLeft, Play, FileText, Headphones, CheckCircle } from "lucide-react";
+import { Loader2, ArrowLeft, Play, FileText, Headphones, CheckCircle, Lock } from "lucide-react";
 
 export default function ItemDetail() {
   const [, params] = useRoute("/item/:id");
@@ -115,9 +115,20 @@ export default function ItemDetail() {
                   return (
                     <Card
                       key={content.id}
-                      className="p-4 md:p-6 hover:border-primary transition-colors cursor-pointer touch-manipulation"
-                      onClick={() => setLocation(`/content/${content.id}`)}
+                      className={`p-4 md:p-6 transition-colors touch-manipulation relative ${
+                        content.isAccessible 
+                          ? 'hover:border-primary cursor-pointer' 
+                          : 'cursor-not-allowed opacity-75'
+                      }`}
+                      onClick={() => content.isAccessible && setLocation(`/content/${content.id}`)}
                     >
+                      {/* Overlay de Bloqueio */}
+                      {!content.isAccessible && (
+                        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 rounded-lg flex flex-col items-center justify-center">
+                          <Lock className="h-10 w-10 md:h-12 md:w-12 text-white/80 mb-2 md:mb-3" />
+                          <p className="text-base md:text-lg font-semibold text-white">Brevemente Disponível</p>
+                        </div>
+                      )}
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-start gap-3 md:gap-4 flex-1">
                           <div className="p-2 md:p-3 bg-primary/10 rounded-lg text-primary">

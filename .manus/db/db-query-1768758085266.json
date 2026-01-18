@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE contents c\nJOIN weeks w ON c.weekId = w.id\nSET c.isAccessible = FALSE\nWHERE w.weekGroup IN (2, 3, 4);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute UPDATE contents c\nJOIN weeks w ON c.weekId = w.id\nSET c.isAccessible = FALSE\nWHERE w.weekGroup IN (2, 3, 4);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 84
+}

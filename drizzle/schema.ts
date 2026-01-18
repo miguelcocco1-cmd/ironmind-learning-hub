@@ -49,7 +49,6 @@ export const weeks = mysqlTable("weeks", {
   weekName: varchar("weekName", { length: 100 }), // Nome personalizado da semana (para Ciclo 0: "Apresentação", "Como Funciona", etc.)
   type: mysqlEnum("type", ["live", "topic", "exercise"]).notNull(), // Aula ao vivo, tópico teórico ou exercício prático
   isPublished: boolean("isPublished").default(false).notNull(),
-  isAccessible: boolean("isAccessible").default(true).notNull(), // Controlo manual de acesso às semanas
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -71,6 +70,7 @@ export const contents = mysqlTable("contents", {
   order: int("order").notNull(), // Ordem de apresentação dentro da semana
   thumbnailUrl: text("thumbnailUrl"), // Thumbnail para vídeos
   isPublished: boolean("isPublished").default(false).notNull(),
+  isAccessible: boolean("isAccessible").default(true).notNull(), // Controlo manual de acesso aos conteúdos
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
