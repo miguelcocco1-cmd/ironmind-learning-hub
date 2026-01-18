@@ -101,7 +101,7 @@ export default function WeekDetail() {
                   title={`${itemLabel}: ${item.title}`}
                   thumbnail={thumbnail}
                   isAccessible={isAccessible}
-                  area={item.type === 'exercise' && item.area ? item.area : undefined}
+                  area={item.area || undefined}
                   onClick={() => setLocation(`/item/${item.id}`)}
                   className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
                 />

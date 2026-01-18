@@ -170,3 +170,8 @@
 - [x] Atualizar ContentCard para mostrar overlay de texto nos exercícios
 - [x] Adicionar nome da área no canto superior esquerdo com fundo escuro
 - [x] Adicionar "IRON MIND Training Lab" no canto inferior esquerdo com fundo escuro
+
+## Overlay em Todos os Itens (Tópicos + Exercícios)
+- [x] Adicionar área a todos os 108 itens (tópicos e exercícios)
+- [x] Distribuir 5 áreas sequencialmente por ordem (Mental Foundation, Focus Lock, Pressure Release, Mental Strength, Mental Recovery)
+- [x] Atualizar frontend para mostrar overlay em todos os itens
