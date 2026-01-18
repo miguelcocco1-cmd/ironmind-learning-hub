@@ -1,0 +1,58 @@
+{
+  "query": "SELECT id, title, `order`, isPublished FROM cycles ORDER BY `order`;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, `order`, isPublished FROM cycles ORDER BY `order`;",
+  "rows": [
+    {
+      "id": "60001",
+      "title": "INTRODUÇÃO",
+      "order": "0",
+      "isPublished": "1"
+    },
+    {
+      "id": "60002",
+      "title": "INTRODUÇÃO - Começar por Aqui",
+      "order": "0",
+      "isPublished": "1"
+    },
+    {
+      "id": "30001",
+      "title": "CICLO 1 - BASE: Fundação Mental",
+      "order": "1",
+      "isPublished": "1"
+    },
+    {
+      "id": "30002",
+      "title": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "order": "2",
+      "isPublished": "1"
+    },
+    {
+      "id": "30003",
+      "title": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "order": "3",
+      "isPublished": "1"
+    },
+    {
+      "id": "30004",
+      "title": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "order": "4",
+      "isPublished": "1"
+    },
+    {
+      "id": "30005",
+      "title": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "order": "5",
+      "isPublished": "1"
+    },
+    {
+      "id": "30006",
+      "title": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "order": "6",
+      "isPublished": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\torder\tisPublished\n60001\tINTRODUÇÃO\t0\t1\n60002\tINTRODUÇÃO - Começar por Aqui\t0\t1\n30001\tCICLO 1 - BASE: Fundação Mental\t1\t1\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t2\t1\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t3\t1\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t4\t1\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t5\t1\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t6\t1\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

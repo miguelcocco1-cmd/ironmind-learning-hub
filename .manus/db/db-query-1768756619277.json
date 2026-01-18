@@ -1,0 +1,9 @@
+{
+  "query": "SET @old_auto_increment = @@auto_increment_increment;\nSET @@auto_increment_increment = 1;\nALTER TABLE cycles AUTO_INCREMENT = 1;\nINSERT INTO cycles (id, title, description, `order`, color, isPublished, createdAt, updatedAt) \nVALUES (0, 'INTRODUÇÃO - Começar por Aqui', 'Bem-vindo ao IRON MIND Training Lab. Descobre como funciona o programa e prepara-te para iniciar a tua jornada de treino mental.', 0, '#FFD700', 1, NOW(), NOW());\nSET @@auto_increment_increment = @old_auto_increment;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SET @old_auto_increment = @@auto_increment_increment;\nSET @@auto_increment_increment = 1;\nALTER TABLE cycles AUTO_INCREMENT = 1;\nINSERT INTO cycles (id, title, description, `order`, color, isPublished, createdAt, updatedAt) \nVALUES (0, 'INTRODUÇÃO - Começar por Aqui', 'Bem-vindo ao IRON MIND Training Lab. Descobre como funciona o programa e prepara-te para iniciar a tua jornada de treino mental.', 0, '#FFD700', 1, NOW(), NOW());\nSET @@auto_increment_increment = @old_auto_increment;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 208
+}

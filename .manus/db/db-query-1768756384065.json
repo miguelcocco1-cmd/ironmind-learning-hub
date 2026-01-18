@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO cycles (id, title, description, `order`, color, isPublished, createdAt, updatedAt) \nVALUES (0, 'INTRODUÇÃO - Começar por Aqui', 'Bem-vindo ao IRON MIND Training Lab. Descobre como funciona o programa e prepara-te para iniciar a tua jornada de treino mental.', 0, '#FFD700', 1, NOW(), NOW());",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute INSERT INTO cycles (id, title, description, `order`, color, isPublished, createdAt, updatedAt) \nVALUES (0, 'INTRODUÇÃO - Começar por Aqui', 'Bem-vindo ao IRON MIND Training Lab. Descobre como funciona o programa e prepara-te para iniciar a tua jornada de treino mental.', 0, '#FFD700', 1, NOW(), NOW());",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 57
+}

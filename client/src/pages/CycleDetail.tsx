@@ -42,17 +42,17 @@ export default function CycleDetail() {
     );
   }
 
-  // Para o ciclo de Introdução (id=0), mostrar secções personalizadas
-  const isIntroduction = cycleId === 0;
+  // Para o ciclo de Introdução (order=0), mostrar secções personalizadas
+  const isIntroduction = cycle?.order === 0;
   
   // Agrupar itens por semana (weekGroup 1-4) ou criar cards personalizados para Introdução
   const weekGroups = isIntroduction 
     ? [1, 2, 3, 4].map(weekNum => {
         const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
-        const item = items[0]; // Cada weekGroup tem 1 item com título personalizado
+        const item = items[0]; // Cada weekGroup tem 1 item com weekName personalizado
         return {
           weekNumber: weekNum,
-          title: item?.title || `Secção ${weekNum}`,
+          title: item?.weekName || item?.title || `Secção ${weekNum}`,
           description: item?.description || '',
           items,
           totalItems: items.length,

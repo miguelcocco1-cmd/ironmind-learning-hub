@@ -117,5 +117,5 @@
 ## Personalização do Ciclo de Introdução
 - [x] Remover itens existentes da Introdução
 - [x] Criar 4 secções personalizadas com títulos específicos
-- [x] Ajustar interface para mostrar títulos em vez de "Semana X"
+- [ ] Corrigir visualização dos títulos nos cards (ainda mostra "Semana X")
 - [x] Adicionar conteúdos às 4 secções
