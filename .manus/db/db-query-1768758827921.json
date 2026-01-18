@@ -1,0 +1,234 @@
+{
+  "query": "SELECT \n  c.id as cycleId,\n  c.title as cycleTitle,\n  w.weekGroup,\n  COUNT(DISTINCT co.id) as totalContents,\n  SUM(CASE WHEN co.isAccessible = TRUE THEN 1 ELSE 0 END) as accessibleContents,\n  SUM(CASE WHEN co.isAccessible = FALSE THEN 1 ELSE 0 END) as blockedContents\nFROM cycles c\nJOIN weeks w ON w.cycleId = c.id\nLEFT JOIN contents co ON co.weekId = w.id\nGROUP BY c.id, c.title, w.weekGroup\nORDER BY c.id, w.weekGroup;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT \n  c.id as cycleId,\n  c.title as cycleTitle,\n  w.weekGroup,\n  COUNT(DISTINCT co.id) as totalContents,\n  SUM(CASE WHEN co.isAccessible = TRUE THEN 1 ELSE 0 END) as accessibleContents,\n  SUM(CASE WHEN co.isAccessible = FALSE THEN 1 ELSE 0 END) as blockedContents\nFROM cycles c\nJOIN weeks w ON w.cycleId = c.id\nLEFT JOIN contents co ON co.weekId = w.id\nGROUP BY c.id, c.title, w.weekGroup\nORDER BY c.id, w.weekGroup;",
+  "rows": [
+    {
+      "cycleId": "30001",
+      "cycleTitle": "CICLO 1 - BASE: Fundação Mental",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30001",
+      "cycleTitle": "CICLO 1 - BASE: Fundação Mental",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30001",
+      "cycleTitle": "CICLO 1 - BASE: Fundação Mental",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30001",
+      "cycleTitle": "CICLO 1 - BASE: Fundação Mental",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30002",
+      "cycleTitle": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30002",
+      "cycleTitle": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30002",
+      "cycleTitle": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30002",
+      "cycleTitle": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30003",
+      "cycleTitle": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30003",
+      "cycleTitle": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30003",
+      "cycleTitle": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30003",
+      "cycleTitle": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30004",
+      "cycleTitle": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30004",
+      "cycleTitle": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30004",
+      "cycleTitle": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30004",
+      "cycleTitle": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30005",
+      "cycleTitle": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30005",
+      "cycleTitle": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30005",
+      "cycleTitle": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30005",
+      "cycleTitle": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30006",
+      "cycleTitle": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "weekGroup": "1",
+      "totalContents": "15",
+      "accessibleContents": "15",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "30006",
+      "cycleTitle": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "weekGroup": "2",
+      "totalContents": "15",
+      "accessibleContents": "0",
+      "blockedContents": "15"
+    },
+    {
+      "cycleId": "30006",
+      "cycleTitle": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "weekGroup": "3",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "30006",
+      "cycleTitle": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "weekGroup": "4",
+      "totalContents": "12",
+      "accessibleContents": "0",
+      "blockedContents": "12"
+    },
+    {
+      "cycleId": "90001",
+      "cycleTitle": "INTRODUÇÃO - Começar por Aqui",
+      "weekGroup": "1",
+      "totalContents": "0",
+      "accessibleContents": "0",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "90001",
+      "cycleTitle": "INTRODUÇÃO - Começar por Aqui",
+      "weekGroup": "2",
+      "totalContents": "0",
+      "accessibleContents": "0",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "90001",
+      "cycleTitle": "INTRODUÇÃO - Começar por Aqui",
+      "weekGroup": "3",
+      "totalContents": "0",
+      "accessibleContents": "0",
+      "blockedContents": "0"
+    },
+    {
+      "cycleId": "90001",
+      "cycleTitle": "INTRODUÇÃO - Começar por Aqui",
+      "weekGroup": "4",
+      "totalContents": "0",
+      "accessibleContents": "0",
+      "blockedContents": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "cycleId\tcycleTitle\tweekGroup\ttotalContents\taccessibleContents\tblockedContents\n30001\tCICLO 1 - BASE: Fundação Mental\t1\t15\t15\t0\n30001\tCICLO 1 - BASE: Fundação Mental\t2\t15\t0\t15\n30001\tCICLO 1 - BASE: Fundação Mental\t3\t12\t0\t12\n30001\tCICLO 1 - BASE: Fundação Mental\t4\t12\t0\t12\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t1\t15\t15\t0\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t2\t15\t0\t15\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t3\t12\t0\t12\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t4\t12\t0\t12\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t1\t15\t15\t0\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t2\t15\t0\t15\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t3\t12\t0\t12\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t4\t12\t0\t12\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t1\t15\t15\t0\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t2\t15\t0\t15\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t3\t12\t0\t12\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t4\t12\t0\t12\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t1\t15\t15\t0\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t2\t15\t0\t15\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t3\t12\t0\t12\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t4\t12\t0\t12\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t1\t15\t15\t0\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t2\t15\t0\t15\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t3\t12\t0\t12\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t4\t12\t0\t12\n90001\tINTRODUÇÃO - Começar por Aqui\t1\t0\t0\t0\n90001\tINTRODUÇÃO - Começar por Aqui\t2\t0\t0\t0\n90001\tINTRODUÇÃO - Começar por Aqui\t3\t0\t0\t0\n90001\tINTRODUÇÃO - Começar por Aqui\t4\t0\t0\t0\n",
+  "stderr": "",
+  "execution_time_ms": 94
+}

@@ -137,3 +137,13 @@
 - [x] Adicionar overlay de bloqueio aos cards de itens (WeekDetail.tsx, ItemDetail.tsx e ContentCard.tsx)
 - [x] Configurar conteúdos da Semana 1 como acessíveis
 - [x] Configurar conteúdos das Semanas 2-4 como bloqueados
+
+## Desbloqueio da Semana 1 de Todos os Ciclos
+- [ ] Verificar estado atual de bloqueio dos conteúdos
+- [ ] Desbloquear Semana 1 dos Ciclos 2, 3, 4, 5, 6
+- [ ] Testar acesso à Semana 1 de diferentes ciclos
+
+## Criação dos Ciclos 2-6
+- [x] Criar 18 itens (weeks) para cada ciclo (Ciclos 2, 3, 4, 5, 6)
+- [x] Criar conteúdos (vídeos, áudios, PDFs) para cada item
+- [x] Configurar Semana 1 como acessível e Semanas 2-4 como bloqueadas
