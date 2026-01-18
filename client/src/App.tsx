@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Modules from "./pages/Modules";
 import CycleDetail from "./pages/CycleDetail";
 import WeekDetail from "./pages/WeekDetail";
+import ItemDetail from "./pages/ItemDetail";
 import ContentViewer from "./pages/ContentViewer";
 import ExerciseViewer from "./pages/ExerciseViewer";
 import Dashboard from "./pages/Dashboard";
@@ -19,7 +20,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/modules"} component={Modules} />
       <Route path={"/cycle/:id"} component={CycleDetail} />
-      <Route path={"/week/:id"} component={WeekDetail} />
+      <Route path={"/cycle/:cycleId/week/:weekNumber"} component={WeekDetail} />
+      <Route path={"/item/:id"} component={ItemDetail} />
       <Route path={"/content/:id"} component={ContentViewer} />
       <Route path={"/exercise/:id"} component={ExerciseViewer} />
       <Route path={"/dashboard"} component={Dashboard} />

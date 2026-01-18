@@ -70,6 +70,7 @@ listByCycle: publicProcedure
         title: z.string(),
         description: z.string().optional(),
         weekNumber: z.number(),
+        weekGroup: z.number().min(1).max(4), // Semana dentro do ciclo (1-4)
         type: z.enum(["topic", "exercise"]),
         isPublished: z.boolean().default(false),
       }))

@@ -60,3 +60,10 @@
 - [x] Otimizar hero banner para dispositivos móveis
 - [x] Ajustar grid de cards de ciclos para mobile (1 coluna)
 - [x] Testar e validar responsividade em diferentes tamanhos de tela
+
+## Reorganização: 4 Semanas por Ciclo
+- [x] Ajustar schema para adicionar campo de agrupamento semanal
+- [x] Modificar CycleDetail para mostrar 4 semanas em vez de todos os itens
+- [x] Criar página WeekDetail para mostrar conteúdos de uma semana específica
+- [x] Atualizar routers para suportar navegação Ciclo → Semana → Conteúdos
+- [x] Popular base de dados distribuindo os 18 itens pelas 4 semanas de cada ciclo
