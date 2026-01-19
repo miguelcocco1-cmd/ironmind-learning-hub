@@ -3,17 +3,52 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
 import { CheckCircle, Activity, Watch } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 export default function Setup() {
   const [, setLocation] = useLocation();
-  const [stravaConnected, setStravaConnected] = useState(false);
   const [garminConnected, setGarminConnected] = useState(false);
 
+  // Check Strava connection status
+  const { data: stravaStatus, refetch: refetchStatus } = trpc.integrations.strava.getStatus.useQuery();
+  const stravaConnected = stravaStatus?.connected || false;
+
+  // Get Strava auth URL
+  const { data: authData } = trpc.integrations.strava.getAuthUrl.useQuery();
+
+  // Handle OAuth callback
+  const handleCallbackMutation = trpc.integrations.strava.handleCallback.useMutation({
+    onSuccess: () => {
+      toast.success("Strava conectado com sucesso!");
+      refetchStatus();
+    },
+    onError: (error) => {
+      toast.error("Erro ao conectar Strava: " + error.message);
+    },
+  });
+
+  // Check for OAuth callback in URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const scope = params.get("scope");
+
+    if (code) {
+      handleCallbackMutation.mutate({ code, scope: scope || undefined });
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
   const handleStravaConnect = () => {
-    // TODO: Implementar OAuth flow real do Strava
-    // Por agora, simulamos conexão
-    setStravaConnected(true);
+    if (authData?.url) {
+      // Open Strava OAuth in same window
+      window.location.href = authData.url;
+    } else {
+      toast.error("Erro ao obter URL de autorização do Strava");
+    }
   };
 
   const handleGarminConnect = () => {

@@ -216,3 +216,22 @@
 - [ ] Sincronizar dados do Strava/Garmin
 - [ ] Criar dashboard com dados físicos + mentais
 - [ ] Implementar insights automáticos baseados em treino físico
+
+## Implementação Strava OAuth (Real)
+- [ ] Adicionar STRAVA_CLIENT_ID e STRAVA_CLIENT_SECRET aos secrets
+- [x] Criar router de integrações (server/integrations.ts)
+- [x] Implementar endpoint strava.getAuthUrl
+- [x] Implementar endpoint strava.handleCallback
+- [x] Implementar endpoint strava.syncActivities
+- [x] Implementar endpoint strava.disconnect
+- [x] Criar tabela activities na base de dados
+- [x] Atualizar página Setup para usar OAuth real
+- [ ] Testar fluxo completo de autenticação
+
+## Dashboard Unificado
+- [x] Criar página /unified-dashboard
+- [x] Secção: Resumo Semanal (físico + mental)
+- [x] Secção: Últimas 5 Atividades do Strava
+- [x] Secção: Progresso Mental (badges, sessões)
+- [x] Card: Estatísticas Comparativas
+- [x] Botão: Sincronizar Dados do Strava

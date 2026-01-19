@@ -5,6 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
 import { getAllWeeksWithContents } from "./content-helpers";
+import { integrationsRouter } from "./integrations";
 
 export const appRouter = router({
   system: systemRouter,
@@ -200,6 +201,9 @@ listByCycle: publicProcedure
         return await db.getUserContentProgress(ctx.user.id, input.contentId);
       }),
   }),
+
+  // ============= INTEGRATIONS =============
+  integrations: integrationsRouter,
 
   // ============= BADGES =============
   badges: router({

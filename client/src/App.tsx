@@ -14,13 +14,15 @@ import ExerciseViewer from "./pages/ExerciseViewer";
 import Dashboard from "./pages/Dashboard";
 import QuizPage from "./pages/QuizPage";
 import Setup from "./pages/Setup";
+import UnifiedDashboard from "./pages/UnifiedDashboard";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/setup"} component={Setup} />
+        <Route path="/setup" component={Setup} />
+        <Route path="/unified-dashboard" component={UnifiedDashboard} />
       <Route path={"/modules"} component={Modules} />
       <Route path={"/cycle/:id"} component={CycleDetail} />
       <Route path={"/cycle/:cycleId/week/:weekNumber"} component={WeekDetail} />

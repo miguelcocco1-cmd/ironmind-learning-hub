@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, bigint } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, bigint, decimal, json } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -179,3 +179,46 @@ export const userBadges = mysqlTable("user_badges", {
 
 export type UserBadge = typeof userBadges.$inferSelect;
 export type InsertUserBadge = typeof userBadges.$inferInsert;
+
+/**
+ * Integrações externas (Strava, Garmin, etc.)
+ */
+export const userIntegrations = mysqlTable("user_integrations", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  provider: varchar("provider", { length: 50 }).notNull(), // strava, garmin, etc
+  accessToken: text("accessToken"),
+  refreshToken: text("refreshToken"),
+  expiresAt: bigint("expiresAt", { mode: "bigint" }),
+  isActive: boolean("isActive").default(true).notNull(),
+  metadata: json("metadata"), // Dados adicionais como athlete_id, username, etc
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type UserIntegration = typeof userIntegrations.$inferSelect;
+export type InsertUserIntegration = typeof userIntegrations.$inferInsert;
+
+/**
+ * Atividades físicas sincronizadas do Strava/Garmin
+ */
+export const activities = mysqlTable("activities", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  provider: varchar("provider", { length: 50 }).notNull(), // strava, garmin, etc
+  externalId: varchar("externalId", { length: 255 }).notNull(), // ID da atividade no provider
+  name: varchar("name", { length: 255 }),
+  type: varchar("type", { length: 50 }), // Run, Ride, Swim, etc
+  distance: decimal("distance", { precision: 10, scale: 2 }), // Distância em metros
+  duration: int("duration"), // Duração em segundos
+  startDate: timestamp("startDate"),
+  avgHeartRate: decimal("avgHeartRate", { precision: 5, scale: 2 }),
+  maxHeartRate: int("maxHeartRate"),
+  calories: int("calories"),
+  metadata: json("metadata"), // Dados extras como pace, elevation, etc
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Activity = typeof activities.$inferSelect;
+export type InsertActivity = typeof activities.$inferInsert;
