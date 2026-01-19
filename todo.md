@@ -235,3 +235,11 @@
 - [x] Secção: Progresso Mental (badges, sessões)
 - [x] Card: Estatísticas Comparativas
 - [x] Botão: Sincronizar Dados do Strava
+
+## Modo Demo Strava (Para Demonstração)
+- [x] Criar dados simulados de atividades Strava realistas
+- [x] Adicionar modo demo que funciona sem OAuth real
+- [x] Atualizar página Setup para conexão instantânea em demo
+- [x] Atualizar dashboard unificado para mostrar dados demo
+- [ ] Adicionar toggle para alternar entre modo demo e modo real
+- [x] Testar fluxo completo de demonstração

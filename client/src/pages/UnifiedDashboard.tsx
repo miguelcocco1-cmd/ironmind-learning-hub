@@ -55,27 +55,8 @@ export default function UnifiedDashboard() {
       : 0,
   } : null;
 
-  if (!stravaStatus?.connected) {
-    return (
-      <div className="container mx-auto py-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Dashboard Unificado</h1>
-          
-          <Card className="p-8 text-center">
-            <Activity className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-            <h2 className="text-2xl font-semibold mb-2">Conecta o Strava</h2>
-            <p className="text-muted-foreground mb-6">
-              Para ver o teu dashboard unificado com dados de treino físico e mental,
-              primeiro precisa conectar a tua conta Strava.
-            </p>
-            <Button onClick={() => window.location.href = "/setup"}>
-              Ir para Configuração
-            </Button>
-          </Card>
-        </div>
-      </div>
-    );
-  }
+  // MODO DEMO: Sempre mostrar dashboard com dados demo
+  // if (!stravaStatus?.connected) { ... }
 
   return (
     <div className="container mx-auto py-8">

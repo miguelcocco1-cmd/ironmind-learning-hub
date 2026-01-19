@@ -43,18 +43,18 @@ export default function Setup() {
   }, []);
 
   const handleStravaConnect = () => {
-    if (authData?.url) {
-      // Open Strava OAuth in same window
-      window.location.href = authData.url;
-    } else {
-      toast.error("Erro ao obter URL de autorização do Strava");
-    }
+    // MODO DEMO: Simular conexão instantânea
+    toast.success("✅ Strava conectado! (Modo Demonstração)");
+    setTimeout(() => {
+      refetchStatus();
+      setLocation("/unified-dashboard");
+    }, 1000);
   };
 
   const handleGarminConnect = () => {
-    // TODO: Implementar OAuth flow real do Garmin
-    // Por agora, simulamos conexão
+    // MODO DEMO: Simular conexão instantânea
     setGarminConnected(true);
+    toast.success("✅ Garmin conectado! (Modo Demonstração)");
   };
 
   const handleContinue = () => {
