@@ -80,7 +80,7 @@ export default function Home() {
         {/* Grupo Telegram - Card Destaque */}
         <div className="mb-8 md:mb-12">
           <Card
-            onClick={() => window.open('https://t.me/+SEU_LINK_TELEGRAM', '_blank')}
+            onClick={() => window.open('https://t.me/+zw2pSZYWnjphMzU0', '_blank')}
             className="group cursor-pointer border-2 border-blue-500 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden touch-manipulation"
           >
             <div className="p-6 md:p-8">

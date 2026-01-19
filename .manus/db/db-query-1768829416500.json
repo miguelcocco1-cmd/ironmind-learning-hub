@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE weeks SET description = 'Junta-te à nossa comunidade exclusiva no Telegram! Partilha experiências, desafios e conquistas com outros atletas que estão na mesma jornada de desenvolvimento mental. Recebe suporte diário, dicas práticas e mantém-te motivado com o grupo. Link: https://t.me/+zw2pSZYWnjphMzU0' WHERE id = 10006;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute UPDATE weeks SET description = 'Junta-te à nossa comunidade exclusiva no Telegram! Partilha experiências, desafios e conquistas com outros atletas que estão na mesma jornada de desenvolvimento mental. Recebe suporte diário, dicas práticas e mantém-te motivado com o grupo. Link: https://t.me/+zw2pSZYWnjphMzU0' WHERE id = 10006;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 64
+}
