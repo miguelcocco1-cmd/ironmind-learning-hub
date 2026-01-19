@@ -1,0 +1,64 @@
+{
+  "query": "SELECT id, cycleId, title, weekNumber, weekGroup, weekName, type FROM weeks WHERE cycleId = 10000 OR cycleId = 90001 ORDER BY cycleId, weekNumber;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, cycleId, title, weekNumber, weekGroup, weekName, type FROM weeks WHERE cycleId = 10000 OR cycleId = 90001 ORDER BY cycleId, weekNumber;",
+  "rows": [
+    {
+      "id": "10005",
+      "cycleId": "10000",
+      "title": "Configuração Inicial",
+      "weekNumber": "5",
+      "weekGroup": "5",
+      "weekName": "Setup",
+      "type": "topic"
+    },
+    {
+      "id": "10006",
+      "cycleId": "10000",
+      "title": "Grupo Telegram da Comunidade",
+      "weekNumber": "6",
+      "weekGroup": "6",
+      "weekName": "Comunidade",
+      "type": "topic"
+    },
+    {
+      "id": "60144",
+      "cycleId": "90001",
+      "title": "Apresentação",
+      "weekNumber": "1",
+      "weekGroup": "1",
+      "weekName": "Apresentação",
+      "type": "topic"
+    },
+    {
+      "id": "60145",
+      "cycleId": "90001",
+      "title": "Como Funciona",
+      "weekNumber": "2",
+      "weekGroup": "2",
+      "weekName": "Como Funciona",
+      "type": "topic"
+    },
+    {
+      "id": "60146",
+      "cycleId": "90001",
+      "title": "O Que Tens Acesso",
+      "weekNumber": "3",
+      "weekGroup": "3",
+      "weekName": "O Que Tens Acesso",
+      "type": "topic"
+    },
+    {
+      "id": "60147",
+      "cycleId": "90001",
+      "title": "Primeiros Passos",
+      "weekNumber": "4",
+      "weekGroup": "4",
+      "weekName": "Primeiros Passos",
+      "type": "topic"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcycleId\ttitle\tweekNumber\tweekGroup\tweekName\ttype\n10005\t10000\tConfiguração Inicial\t5\t5\tSetup\ttopic\n10006\t10000\tGrupo Telegram da Comunidade\t6\t6\tComunidade\ttopic\n60144\t90001\tApresentação\t1\t1\tApresentação\ttopic\n60145\t90001\tComo Funciona\t2\t2\tComo Funciona\ttopic\n60146\t90001\tO Que Tens Acesso\t3\t3\tO Que Tens Acesso\ttopic\n60147\t90001\tPrimeiros Passos\t4\t4\tPrimeiros Passos\ttopic\n",
+  "stderr": "",
+  "execution_time_ms": 68
+}

@@ -1,0 +1,26 @@
+{
+  "query": "SELECT id, cycleId, title, weekNumber, weekGroup, weekName FROM weeks WHERE cycleId = 10000 ORDER BY weekNumber;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, cycleId, title, weekNumber, weekGroup, weekName FROM weeks WHERE cycleId = 10000 ORDER BY weekNumber;",
+  "rows": [
+    {
+      "id": "10005",
+      "cycleId": "10000",
+      "title": "Configuração Inicial",
+      "weekNumber": "5",
+      "weekGroup": "5",
+      "weekName": "Setup"
+    },
+    {
+      "id": "10006",
+      "cycleId": "10000",
+      "title": "Grupo Telegram da Comunidade",
+      "weekNumber": "6",
+      "weekGroup": "6",
+      "weekName": "Comunidade"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcycleId\ttitle\tweekNumber\tweekGroup\tweekName\n10005\t10000\tConfiguração Inicial\t5\t5\tSetup\n10006\t10000\tGrupo Telegram da Comunidade\t6\t6\tComunidade\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

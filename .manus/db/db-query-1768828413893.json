@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE weeks SET cycleId = 90001 WHERE id IN (10005, 10006);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute UPDATE weeks SET cycleId = 90001 WHERE id IN (10005, 10006);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 59
+}

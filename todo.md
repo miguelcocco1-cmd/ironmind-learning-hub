@@ -243,3 +243,11 @@
 - [x] Atualizar dashboard unificado para mostrar dados demo
 - [ ] Adicionar toggle para alternar entre modo demo e modo real
 - [x] Testar fluxo completo de demonstração
+
+## Reorganização: Setup + Grupo Telegram
+- [x] Mover Setup para dentro do Ciclo 0 (Introdução) como item 5
+- [x] Criar novo item "Grupo Telegram" no Ciclo 0
+- [x] Remover card "Ciclo -1" da homepage
+- [x] Criar novo card "Grupo Telegram" na homepage (onde estava Ciclo -1)
+- [x] Escrever texto motivador para o Grupo Telegram
+- [x] Testar navegação completa

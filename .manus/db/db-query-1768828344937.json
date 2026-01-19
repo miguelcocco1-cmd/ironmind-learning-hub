@@ -1,0 +1,9 @@
+{
+  "query": "-- Atualizar weekGroup para que cada item da Introdução seja individual\n-- Item 1: weekGroup 1\n-- Item 2: weekGroup 2\n-- Item 3: weekGroup 3\n-- Item 4: weekGroup 4\n-- Item 5 (Setup): weekGroup 5\n-- Item 6 (Telegram): weekGroup 6\n\nUPDATE weeks SET weekGroup = 5 WHERE id = 10005;\nUPDATE weeks SET weekGroup = 6 WHERE id = 10006;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute -- Atualizar weekGroup para que cada item da Introdução seja individual\n-- Item 1: weekGroup 1\n-- Item 2: weekGroup 2\n-- Item 3: weekGroup 3\n-- Item 4: weekGroup 4\n-- Item 5 (Setup): weekGroup 5\n-- Item 6 (Telegram): weekGroup 6\n\nUPDATE weeks SET weekGroup = 5 WHERE id = 10005;\nUPDATE weeks SET weekGroup = 6 WHERE id = 10006;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 72
+}

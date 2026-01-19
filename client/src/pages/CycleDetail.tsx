@@ -48,9 +48,9 @@ export default function CycleDetail() {
   // Sessão de Hipnose (weekNumber = 0, weekGroup = 0)
   const hypnosisSession = allWeeks?.find(w => w.weekNumber === 0 && w.weekGroup === 0);
   
-  // Agrupar itens por semana (weekGroup 1-4) ou criar cards personalizados para Introdução
+  // Agrupar itens por semana (weekGroup 1-6 para Introdução, 1-4 para outros ciclos)
   const weekGroups = isIntroduction 
-    ? [1, 2, 3, 4].map(weekNum => {
+    ? [1, 2, 3, 4, 5, 6].map(weekNum => {
         const items = allWeeks?.filter(w => w.weekGroup === weekNum) || [];
         const item = items[0]; // Cada weekGroup tem 1 item com weekName personalizado
         return {
