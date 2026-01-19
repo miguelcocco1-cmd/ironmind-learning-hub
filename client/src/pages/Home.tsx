@@ -16,8 +16,13 @@ export default function Home() {
     );
   }
 
+  // Separar Ciclo -1 (Setup) dos outros ciclos
+  const setupCycle = cycles?.find(c => c.order === -1);
+  const regularCycles = cycles?.filter(c => c.order >= 0) || [];
+
   // Cores dos ciclos baseadas no documento
   const cycleColors: Record<number, { bg: string; border: string; icon: string }> = {
+    [-1]: { bg: "bg-purple-500/10", border: "border-purple-500/50", icon: "text-purple-500" }, // Setup
     0: { bg: "bg-yellow-500/10", border: "border-yellow-500/50", icon: "text-yellow-500" }, // Introdução
     1: { bg: "bg-blue-500/10", border: "border-blue-500/50", icon: "text-blue-500" },
     2: { bg: "bg-green-500/10", border: "border-green-500/50", icon: "text-green-500" },
@@ -73,9 +78,39 @@ export default function Home() {
           </p>
         </div>
 
-        {cycles && cycles.length > 0 ? (
+        {/* Setup Card (Ciclo -1) - Destaque especial */}
+        {setupCycle && (
+          <div className="mb-8 md:mb-12">
+            <Card
+              onClick={() => setLocation(`/setup`)}
+              className="group cursor-pointer border-2 border-purple-500 bg-gradient-to-br from-purple-900/20 to-indigo-900/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 overflow-hidden touch-manipulation"
+            >
+              <div className="p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-purple-500/20 rounded-full">
+                    <svg className="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white group-hover:text-purple-200 transition-colors">
+                      {setupCycle.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                      {setupCycle.description}
+                    </p>
+                  </div>
+                  <ChevronRight className="h-8 w-8 text-purple-400 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {regularCycles && regularCycles.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {cycles.map((cycle) => {
+            {regularCycles.map((cycle) => {
               const colors = cycleColors[cycle.order] || cycleColors[1];
               
               return (

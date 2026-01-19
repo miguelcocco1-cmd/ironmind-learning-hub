@@ -201,3 +201,18 @@
 - [x] Posicionar sessão de hipnose como card especial antes das 4 semanas
 - [x] Design diferenciado para destacar sessão de hipnose
 - [ ] Adicionar áudio de hipnose personalizado para cada ciclo
+
+## Ciclo -1: Setup e Integração Strava/Garmin
+- [x] Criar Ciclo -1 (order = -1) na base de dados
+- [x] Criar secção "Conectar Strava" no Ciclo -1
+- [x] Criar secção "Conectar Garmin" no Ciclo -1
+- [x] Adicionar tabela de integrações na base de dados (user_integrations)
+- [ ] Implementar OAuth flow real para Strava
+- [ ] Implementar OAuth flow real para Garmin
+- [x] Criar página de setup com botões de conexão
+- [x] Design visual atrativo para página de setup
+- [x] Mostrar Ciclo -1 antes do Ciclo 0 na homepage
+- [ ] Marcar Ciclo -1 como completo após conexões
+- [ ] Sincronizar dados do Strava/Garmin
+- [ ] Criar dashboard com dados físicos + mentais
+- [ ] Implementar insights automáticos baseados em treino físico
