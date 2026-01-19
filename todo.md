@@ -251,3 +251,11 @@
 - [x] Criar novo card "Grupo Telegram" na homepage (onde estava Ciclo -1)
 - [x] Escrever texto motivador para o Grupo Telegram
 - [x] Testar navegação completa
+
+## PDFs Informativos da Introdução
+- [x] Criar PDF 1: Apresentação (Bem-vindo ao IRON MIND Training Lab)
+- [x] Criar PDF 2: Como Funciona (Estrutura do programa e plataforma)
+- [x] Criar PDF 3: O Que Tens Acesso (Recursos disponíveis)
+- [x] Criar PDF 4: Primeiros Passos (Guia de início)
+- [x] Adicionar PDFs aos conteúdos da Introdução na base de dados
+- [x] Testar visualização dos PDFs na plataforma
