@@ -1,0 +1,40 @@
+{
+  "query": "SELECT id, title, type, LEFT(url, 100) as url_preview FROM contents WHERE title LIKE 'PDF:%' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, type, LEFT(url, 100) as url_preview FROM contents WHERE title LIKE 'PDF:%' LIMIT 5;",
+  "rows": [
+    {
+      "id": "30003",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf",
+      "url_preview": "https://example.com/guide.pdf"
+    },
+    {
+      "id": "30006",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf",
+      "url_preview": "https://example.com/guide.pdf"
+    },
+    {
+      "id": "30009",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf",
+      "url_preview": "https://example.com/guide.pdf"
+    },
+    {
+      "id": "30012",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf",
+      "url_preview": "https://example.com/guide.pdf"
+    },
+    {
+      "id": "30015",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf",
+      "url_preview": "https://example.com/guide.pdf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttype\turl_preview\n30003\tPDF: Guia de Identidade Mental IronMind\tpdf\thttps://example.com/guide.pdf\n30006\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\thttps://example.com/guide.pdf\n30009\tPDF: Guia de Técnicas de Respiração\tpdf\thttps://example.com/guide.pdf\n30012\tPDF: Guia de Relaxamento Progressivo\tpdf\thttps://example.com/guide.pdf\n30015\tPDF: Guia de Conexão Mente-Corpo\tpdf\thttps://example.com/guide.pdf\n",
+  "stderr": "",
+  "execution_time_ms": 65
+}

@@ -1,0 +1,1020 @@
+{
+  "query": "-- Alterar enum para adicionar tipo \"text\"\nALTER TABLE contents MODIFY COLUMN type ENUM('video', 'audio', 'pdf', 'quiz', 'text') NOT NULL;\n\n-- Atualizar os 4 conteúdos da Introdução para tipo \"text\"\nUPDATE contents \nSET type = 'text', url = 'INTRO_TEXT' \nWHERE title IN (\n  'PDF: Apresentação',\n  'PDF: Como Funciona',\n  'PDF: O Que Tens Acesso',\n  'PDF: Primeiros Passos'\n) AND type = 'pdf';\n\nSELECT id, title, type FROM contents WHERE title LIKE 'PDF:%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute -- Alterar enum para adicionar tipo \"text\"\nALTER TABLE contents MODIFY COLUMN type ENUM('video', 'audio', 'pdf', 'quiz', 'text') NOT NULL;\n\n-- Atualizar os 4 conteúdos da Introdução para tipo \"text\"\nUPDATE contents \nSET type = 'text', url = 'INTRO_TEXT' \nWHERE title IN (\n  'PDF: Apresentação',\n  'PDF: Como Funciona',\n  'PDF: O Que Tens Acesso',\n  'PDF: Primeiros Passos'\n) AND type = 'pdf';\n\nSELECT id, title, type FROM contents WHERE title LIKE 'PDF:%';\n",
+  "rows": [
+    {
+      "id": "30003",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30006",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30009",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30012",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30015",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30018",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30021",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30024",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30027",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30030",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30033",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30036",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30039",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30042",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30045",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30048",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30051",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30054",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "30057",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30060",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30063",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30066",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30069",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30072",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30075",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30078",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30081",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30084",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30087",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30090",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30093",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30096",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30099",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30102",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30105",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30108",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "30111",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30114",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30117",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30120",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30123",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30126",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30129",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30132",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30135",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30138",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30141",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30144",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30147",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30150",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30153",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30156",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30159",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30162",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "30165",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30168",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30171",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30174",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30177",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30180",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30183",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30186",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30189",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30192",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30195",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30198",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30201",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30204",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30207",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30210",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30213",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30216",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "30219",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30222",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30225",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30228",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30231",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30234",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30237",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30240",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30243",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30246",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30249",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30252",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30255",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30258",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30261",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30264",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30267",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30270",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "30273",
+      "title": "PDF: Guia de Identidade Mental IronMind",
+      "type": "pdf"
+    },
+    {
+      "id": "30276",
+      "title": "PDF: Guia de Introdução à Auto-Hipnose",
+      "type": "pdf"
+    },
+    {
+      "id": "30279",
+      "title": "PDF: Guia de Técnicas de Respiração",
+      "type": "pdf"
+    },
+    {
+      "id": "30282",
+      "title": "PDF: Guia de Relaxamento Progressivo",
+      "type": "pdf"
+    },
+    {
+      "id": "30285",
+      "title": "PDF: Guia de Conexão Mente-Corpo",
+      "type": "pdf"
+    },
+    {
+      "id": "30288",
+      "title": "PDF: Guia de Âncoras Mentais Básicas",
+      "type": "pdf"
+    },
+    {
+      "id": "30291",
+      "title": "PDF: Guia de Mantras e Afirmações",
+      "type": "pdf"
+    },
+    {
+      "id": "30294",
+      "title": "PDF: Guia de Psicologia Positiva",
+      "type": "pdf"
+    },
+    {
+      "id": "30297",
+      "title": "PDF: Guia de Estado de Transe Leve",
+      "type": "pdf"
+    },
+    {
+      "id": "30300",
+      "title": "PDF: Guia de Redução de Ruído Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30303",
+      "title": "PDF: Guia de Rotina Reset Pré-Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "30306",
+      "title": "PDF: Guia de Diário de Treino Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "30309",
+      "title": "PDF: Instruções Âncora de Calma Profunda",
+      "type": "pdf"
+    },
+    {
+      "id": "30312",
+      "title": "PDF: Instruções 5 Sentidos no Presente",
+      "type": "pdf"
+    },
+    {
+      "id": "30315",
+      "title": "PDF: Instruções Respiração 4-7-8",
+      "type": "pdf"
+    },
+    {
+      "id": "30318",
+      "title": "PDF: Instruções Auto-Hipnose Básica",
+      "type": "pdf"
+    },
+    {
+      "id": "30321",
+      "title": "PDF: Instruções Body Scan",
+      "type": "pdf"
+    },
+    {
+      "id": "30324",
+      "title": "PDF: Instruções Treino Perfeito",
+      "type": "pdf"
+    },
+    {
+      "id": "60003",
+      "title": "PDF: Guia de Introdução ao Foco e Concentração",
+      "type": "pdf"
+    },
+    {
+      "id": "60006",
+      "title": "PDF: Guia de Técnicas Essenciais",
+      "type": "pdf"
+    },
+    {
+      "id": "60009",
+      "title": "PDF: Guia de Prática Guiada",
+      "type": "pdf"
+    },
+    {
+      "id": "60012",
+      "title": "PDF: Guia de Aplicação no Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "60015",
+      "title": "PDF: Guia de Integração Diária",
+      "type": "pdf"
+    },
+    {
+      "id": "60018",
+      "title": "PDF: Guia de Técnicas Avançadas",
+      "type": "pdf"
+    },
+    {
+      "id": "60021",
+      "title": "PDF: Guia de Gestão de Distrações",
+      "type": "pdf"
+    },
+    {
+      "id": "60024",
+      "title": "PDF: Guia de Visualização Aplicada",
+      "type": "pdf"
+    },
+    {
+      "id": "60027",
+      "title": "PDF: Guia de Ancoragem Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60030",
+      "title": "PDF: Guia de Rotinas de Preparação",
+      "type": "pdf"
+    },
+    {
+      "id": "60033",
+      "title": "PDF: Guia de Superação de Bloqueios",
+      "type": "pdf"
+    },
+    {
+      "id": "60036",
+      "title": "PDF: Guia de Mindset de Crescimento",
+      "type": "pdf"
+    },
+    {
+      "id": "60039",
+      "title": "PDF: Guia de Exercício Prático 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60042",
+      "title": "PDF: Guia de Exercício Prático 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60045",
+      "title": "PDF: Guia de Exercício de Consolidação 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60048",
+      "title": "PDF: Guia de Exercício de Consolidação 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60051",
+      "title": "PDF: Guia de Exercício de Consolidação 3",
+      "type": "pdf"
+    },
+    {
+      "id": "60054",
+      "title": "PDF: Guia de Exercício Final do Ciclo",
+      "type": "pdf"
+    },
+    {
+      "id": "60057",
+      "title": "PDF: Guia de Introdução ao Confiança e Autoestima",
+      "type": "pdf"
+    },
+    {
+      "id": "60060",
+      "title": "PDF: Guia de Técnicas Essenciais",
+      "type": "pdf"
+    },
+    {
+      "id": "60063",
+      "title": "PDF: Guia de Prática Guiada",
+      "type": "pdf"
+    },
+    {
+      "id": "60066",
+      "title": "PDF: Guia de Aplicação no Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "60069",
+      "title": "PDF: Guia de Integração Diária",
+      "type": "pdf"
+    },
+    {
+      "id": "60072",
+      "title": "PDF: Guia de Técnicas Avançadas",
+      "type": "pdf"
+    },
+    {
+      "id": "60075",
+      "title": "PDF: Guia de Gestão de Distrações",
+      "type": "pdf"
+    },
+    {
+      "id": "60078",
+      "title": "PDF: Guia de Visualização Aplicada",
+      "type": "pdf"
+    },
+    {
+      "id": "60081",
+      "title": "PDF: Guia de Ancoragem Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60084",
+      "title": "PDF: Guia de Rotinas de Preparação",
+      "type": "pdf"
+    },
+    {
+      "id": "60087",
+      "title": "PDF: Guia de Superação de Bloqueios",
+      "type": "pdf"
+    },
+    {
+      "id": "60090",
+      "title": "PDF: Guia de Mindset de Crescimento",
+      "type": "pdf"
+    },
+    {
+      "id": "60093",
+      "title": "PDF: Guia de Exercício Prático 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60096",
+      "title": "PDF: Guia de Exercício Prático 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60099",
+      "title": "PDF: Guia de Exercício de Consolidação 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60102",
+      "title": "PDF: Guia de Exercício de Consolidação 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60105",
+      "title": "PDF: Guia de Exercício de Consolidação 3",
+      "type": "pdf"
+    },
+    {
+      "id": "60108",
+      "title": "PDF: Guia de Exercício Final do Ciclo",
+      "type": "pdf"
+    },
+    {
+      "id": "60111",
+      "title": "PDF: Guia de Introdução ao Resiliência Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60114",
+      "title": "PDF: Guia de Técnicas Essenciais",
+      "type": "pdf"
+    },
+    {
+      "id": "60117",
+      "title": "PDF: Guia de Prática Guiada",
+      "type": "pdf"
+    },
+    {
+      "id": "60120",
+      "title": "PDF: Guia de Aplicação no Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "60123",
+      "title": "PDF: Guia de Integração Diária",
+      "type": "pdf"
+    },
+    {
+      "id": "60126",
+      "title": "PDF: Guia de Técnicas Avançadas",
+      "type": "pdf"
+    },
+    {
+      "id": "60129",
+      "title": "PDF: Guia de Gestão de Distrações",
+      "type": "pdf"
+    },
+    {
+      "id": "60132",
+      "title": "PDF: Guia de Visualização Aplicada",
+      "type": "pdf"
+    },
+    {
+      "id": "60135",
+      "title": "PDF: Guia de Ancoragem Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60138",
+      "title": "PDF: Guia de Rotinas de Preparação",
+      "type": "pdf"
+    },
+    {
+      "id": "60141",
+      "title": "PDF: Guia de Superação de Bloqueios",
+      "type": "pdf"
+    },
+    {
+      "id": "60144",
+      "title": "PDF: Guia de Mindset de Crescimento",
+      "type": "pdf"
+    },
+    {
+      "id": "60147",
+      "title": "PDF: Guia de Exercício Prático 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60150",
+      "title": "PDF: Guia de Exercício Prático 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60153",
+      "title": "PDF: Guia de Exercício de Consolidação 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60156",
+      "title": "PDF: Guia de Exercício de Consolidação 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60159",
+      "title": "PDF: Guia de Exercício de Consolidação 3",
+      "type": "pdf"
+    },
+    {
+      "id": "60162",
+      "title": "PDF: Guia de Exercício Final do Ciclo",
+      "type": "pdf"
+    },
+    {
+      "id": "60165",
+      "title": "PDF: Guia de Introdução ao Performance de Elite",
+      "type": "pdf"
+    },
+    {
+      "id": "60168",
+      "title": "PDF: Guia de Técnicas Essenciais",
+      "type": "pdf"
+    },
+    {
+      "id": "60171",
+      "title": "PDF: Guia de Prática Guiada",
+      "type": "pdf"
+    },
+    {
+      "id": "60174",
+      "title": "PDF: Guia de Aplicação no Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "60177",
+      "title": "PDF: Guia de Integração Diária",
+      "type": "pdf"
+    },
+    {
+      "id": "60180",
+      "title": "PDF: Guia de Técnicas Avançadas",
+      "type": "pdf"
+    },
+    {
+      "id": "60183",
+      "title": "PDF: Guia de Gestão de Distrações",
+      "type": "pdf"
+    },
+    {
+      "id": "60186",
+      "title": "PDF: Guia de Visualização Aplicada",
+      "type": "pdf"
+    },
+    {
+      "id": "60189",
+      "title": "PDF: Guia de Ancoragem Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60192",
+      "title": "PDF: Guia de Rotinas de Preparação",
+      "type": "pdf"
+    },
+    {
+      "id": "60195",
+      "title": "PDF: Guia de Superação de Bloqueios",
+      "type": "pdf"
+    },
+    {
+      "id": "60198",
+      "title": "PDF: Guia de Mindset de Crescimento",
+      "type": "pdf"
+    },
+    {
+      "id": "60201",
+      "title": "PDF: Guia de Exercício Prático 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60204",
+      "title": "PDF: Guia de Exercício Prático 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60207",
+      "title": "PDF: Guia de Exercício de Consolidação 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60210",
+      "title": "PDF: Guia de Exercício de Consolidação 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60213",
+      "title": "PDF: Guia de Exercício de Consolidação 3",
+      "type": "pdf"
+    },
+    {
+      "id": "60216",
+      "title": "PDF: Guia de Exercício Final do Ciclo",
+      "type": "pdf"
+    },
+    {
+      "id": "60219",
+      "title": "PDF: Guia de Introdução ao Mestria Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60222",
+      "title": "PDF: Guia de Técnicas Essenciais",
+      "type": "pdf"
+    },
+    {
+      "id": "60225",
+      "title": "PDF: Guia de Prática Guiada",
+      "type": "pdf"
+    },
+    {
+      "id": "60228",
+      "title": "PDF: Guia de Aplicação no Treino",
+      "type": "pdf"
+    },
+    {
+      "id": "60231",
+      "title": "PDF: Guia de Integração Diária",
+      "type": "pdf"
+    },
+    {
+      "id": "60234",
+      "title": "PDF: Guia de Técnicas Avançadas",
+      "type": "pdf"
+    },
+    {
+      "id": "60237",
+      "title": "PDF: Guia de Gestão de Distrações",
+      "type": "pdf"
+    },
+    {
+      "id": "60240",
+      "title": "PDF: Guia de Visualização Aplicada",
+      "type": "pdf"
+    },
+    {
+      "id": "60243",
+      "title": "PDF: Guia de Ancoragem Mental",
+      "type": "pdf"
+    },
+    {
+      "id": "60246",
+      "title": "PDF: Guia de Rotinas de Preparação",
+      "type": "pdf"
+    },
+    {
+      "id": "60249",
+      "title": "PDF: Guia de Superação de Bloqueios",
+      "type": "pdf"
+    },
+    {
+      "id": "60252",
+      "title": "PDF: Guia de Mindset de Crescimento",
+      "type": "pdf"
+    },
+    {
+      "id": "60255",
+      "title": "PDF: Guia de Exercício Prático 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60258",
+      "title": "PDF: Guia de Exercício Prático 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60261",
+      "title": "PDF: Guia de Exercício de Consolidação 1",
+      "type": "pdf"
+    },
+    {
+      "id": "60264",
+      "title": "PDF: Guia de Exercício de Consolidação 2",
+      "type": "pdf"
+    },
+    {
+      "id": "60267",
+      "title": "PDF: Guia de Exercício de Consolidação 3",
+      "type": "pdf"
+    },
+    {
+      "id": "60270",
+      "title": "PDF: Guia de Exercício Final do Ciclo",
+      "type": "pdf"
+    },
+    {
+      "id": "60273",
+      "title": "PDF: Apresentação",
+      "type": "text"
+    },
+    {
+      "id": "60276",
+      "title": "PDF: Como Funciona",
+      "type": "text"
+    },
+    {
+      "id": "60279",
+      "title": "PDF: O Que Tens Acesso",
+      "type": "text"
+    },
+    {
+      "id": "60282",
+      "title": "PDF: Primeiros Passos",
+      "type": "text"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttype\n30003\tPDF: Guia de Identidade Mental IronMind\tpdf\n30006\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30009\tPDF: Guia de Técnicas de Respiração\tpdf\n30012\tPDF: Guia de Relaxamento Progressivo\tpdf\n30015\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30018\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30021\tPDF: Guia de Mantras e Afirmações\tpdf\n30024\tPDF: Guia de Psicologia Positiva\tpdf\n30027\tPDF: Guia de Estado de Transe Leve\tpdf\n30030\tPDF: Guia de Redução de Ruído Mental\tpdf\n30033\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30036\tPDF: Guia de Diário de Treino Mental\tpdf\n30039\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30042\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30045\tPDF: Instruções Respiração 4-7-8\tpdf\n30048\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30051\tPDF: Instruções Body Scan\tpdf\n30054\tPDF: Instruções Treino Perfeito\tpdf\n30057\tPDF: Guia de Identidade Mental IronMind\tpdf\n30060\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30063\tPDF: Guia de Técnicas de Respiração\tpdf\n30066\tPDF: Guia de Relaxamento Progressivo\tpdf\n30069\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30072\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30075\tPDF: Guia de Mantras e Afirmações\tpdf\n30078\tPDF: Guia de Psicologia Positiva\tpdf\n30081\tPDF: Guia de Estado de Transe Leve\tpdf\n30084\tPDF: Guia de Redução de Ruído Mental\tpdf\n30087\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30090\tPDF: Guia de Diário de Treino Mental\tpdf\n30093\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30096\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30099\tPDF: Instruções Respiração 4-7-8\tpdf\n30102\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30105\tPDF: Instruções Body Scan\tpdf\n30108\tPDF: Instruções Treino Perfeito\tpdf\n30111\tPDF: Guia de Identidade Mental IronMind\tpdf\n30114\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30117\tPDF: Guia de Técnicas de Respiração\tpdf\n30120\tPDF: Guia de Relaxamento Progressivo\tpdf\n30123\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30126\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30129\tPDF: Guia de Mantras e Afirmações\tpdf\n30132\tPDF: Guia de Psicologia Positiva\tpdf\n30135\tPDF: Guia de Estado de Transe Leve\tpdf\n30138\tPDF: Guia de Redução de Ruído Mental\tpdf\n30141\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30144\tPDF: Guia de Diário de Treino Mental\tpdf\n30147\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30150\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30153\tPDF: Instruções Respiração 4-7-8\tpdf\n30156\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30159\tPDF: Instruções Body Scan\tpdf\n30162\tPDF: Instruções Treino Perfeito\tpdf\n30165\tPDF: Guia de Identidade Mental IronMind\tpdf\n30168\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30171\tPDF: Guia de Técnicas de Respiração\tpdf\n30174\tPDF: Guia de Relaxamento Progressivo\tpdf\n30177\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30180\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30183\tPDF: Guia de Mantras e Afirmações\tpdf\n30186\tPDF: Guia de Psicologia Positiva\tpdf\n30189\tPDF: Guia de Estado de Transe Leve\tpdf\n30192\tPDF: Guia de Redução de Ruído Mental\tpdf\n30195\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30198\tPDF: Guia de Diário de Treino Mental\tpdf\n30201\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30204\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30207\tPDF: Instruções Respiração 4-7-8\tpdf\n30210\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30213\tPDF: Instruções Body Scan\tpdf\n30216\tPDF: Instruções Treino Perfeito\tpdf\n30219\tPDF: Guia de Identidade Mental IronMind\tpdf\n30222\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30225\tPDF: Guia de Técnicas de Respiração\tpdf\n30228\tPDF: Guia de Relaxamento Progressivo\tpdf\n30231\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30234\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30237\tPDF: Guia de Mantras e Afirmações\tpdf\n30240\tPDF: Guia de Psicologia Positiva\tpdf\n30243\tPDF: Guia de Estado de Transe Leve\tpdf\n30246\tPDF: Guia de Redução de Ruído Mental\tpdf\n30249\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30252\tPDF: Guia de Diário de Treino Mental\tpdf\n30255\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30258\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30261\tPDF: Instruções Respiração 4-7-8\tpdf\n30264\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30267\tPDF: Instruções Body Scan\tpdf\n30270\tPDF: Instruções Treino Perfeito\tpdf\n30273\tPDF: Guia de Identidade Mental IronMind\tpdf\n30276\tPDF: Guia de Introdução à Auto-Hipnose\tpdf\n30279\tPDF: Guia de Técnicas de Respiração\tpdf\n30282\tPDF: Guia de Relaxamento Progressivo\tpdf\n30285\tPDF: Guia de Conexão Mente-Corpo\tpdf\n30288\tPDF: Guia de Âncoras Mentais Básicas\tpdf\n30291\tPDF: Guia de Mantras e Afirmações\tpdf\n30294\tPDF: Guia de Psicologia Positiva\tpdf\n30297\tPDF: Guia de Estado de Transe Leve\tpdf\n30300\tPDF: Guia de Redução de Ruído Mental\tpdf\n30303\tPDF: Guia de Rotina Reset Pré-Treino\tpdf\n30306\tPDF: Guia de Diário de Treino Mental\tpdf\n30309\tPDF: Instruções Âncora de Calma Profunda\tpdf\n30312\tPDF: Instruções 5 Sentidos no Presente\tpdf\n30315\tPDF: Instruções Respiração 4-7-8\tpdf\n30318\tPDF: Instruções Auto-Hipnose Básica\tpdf\n30321\tPDF: Instruções Body Scan\tpdf\n30324\tPDF: Instruções Treino Perfeito\tpdf\n60003\tPDF: Guia de Introdução ao Foco e Concentração\tpdf\n60006\tPDF: Guia de Técnicas Essenciais\tpdf\n60009\tPDF: Guia de Prática Guiada\tpdf\n60012\tPDF: Guia de Aplicação no Treino\tpdf\n60015\tPDF: Guia de Integração Diária\tpdf\n60018\tPDF: Guia de Técnicas Avançadas\tpdf\n60021\tPDF: Guia de Gestão de Distrações\tpdf\n60024\tPDF: Guia de Visualização Aplicada\tpdf\n60027\tPDF: Guia de Ancoragem Mental\tpdf\n60030\tPDF: Guia de Rotinas de Preparação\tpdf\n60033\tPDF: Guia de Superação de Bloqueios\tpdf\n60036\tPDF: Guia de Mindset de Crescimento\tpdf\n60039\tPDF: Guia de Exercício Prático 1\tpdf\n60042\tPDF: Guia de Exercício Prático 2\tpdf\n60045\tPDF: Guia de Exercício de Consolidação 1\tpdf\n60048\tPDF: Guia de Exercício de Consolidação 2\tpdf\n60051\tPDF: Guia de Exercício de Consolidação 3\tpdf\n60054\tPDF: Guia de Exercício Final do Ciclo\tpdf\n60057\tPDF: Guia de Introdução ao Confiança e Autoestima\tpdf\n60060\tPDF: Guia de Técnicas Essenciais\tpdf\n60063\tPDF: Guia de Prática Guiada\tpdf\n60066\tPDF: Guia de Aplicação no Treino\tpdf\n60069\tPDF: Guia de Integração Diária\tpdf\n60072\tPDF: Guia de Técnicas Avançadas\tpdf\n60075\tPDF: Guia de Gestão de Distrações\tpdf\n60078\tPDF: Guia de Visualização Aplicada\tpdf\n60081\tPDF: Guia de Ancoragem Mental\tpdf\n60084\tPDF: Guia de Rotinas de Preparação\tpdf\n60087\tPDF: Guia de Superação de Bloqueios\tpdf\n60090\tPDF: Guia de Mindset de Crescimento\tpdf\n60093\tPDF: Guia de Exercício Prático 1\tpdf\n60096\tPDF: Guia de Exercício Prático 2\tpdf\n60099\tPDF: Guia de Exercício de Consolidação 1\tpdf\n60102\tPDF: Guia de Exercício de Consolidação 2\tpdf\n60105\tPDF: Guia de Exercício de Consolidação 3\tpdf\n60108\tPDF: Guia de Exercício Final do Ciclo\tpdf\n60111\tPDF: Guia de Introdução ao Resiliência Mental\tpdf\n60114\tPDF: Guia de Técnicas Essenciais\tpdf\n60117\tPDF: Guia de Prática Guiada\tpdf\n60120\tPDF: Guia de Aplicação no Treino\tpdf\n60123\tPDF: Guia de Integração Diária\tpdf\n60126\tPDF: Guia de Técnicas Avançadas\tpdf\n60129\tPDF: Guia de Gestão de Distrações\tpdf\n60132\tPDF: Guia de Visualização Aplicada\tpdf\n60135\tPDF: Guia de Ancoragem Mental\tpdf\n60138\tPDF: Guia de Rotinas de Preparação\tpdf\n60141\tPDF: Guia de Superação de Bloqueios\tpdf\n60144\tPDF: Guia de Mindset de Crescimento\tpdf\n60147\tPDF: Guia de Exercício Prático 1\tpdf\n60150\tPDF: Guia de Exercício Prático 2\tpdf\n60153\tPDF: Guia de Exercício de Consolidação 1\tpdf\n60156\tPDF: Guia de Exercício de Consolidação 2\tpdf\n60159\tPDF: Guia de Exercício de Consolidação 3\tpdf\n60162\tPDF: Guia de Exercício Final do Ciclo\tpdf\n60165\tPDF: Guia de Introdução ao Performance de Elite\tpdf\n60168\tPDF: Guia de Técnicas Essenciais\tpdf\n60171\tPDF: Guia de Prática Guiada\tpdf\n60174\tPDF: Guia de Aplicação no Treino\tpdf\n60177\tPDF: Guia de Integração Diária\tpdf\n60180\tPDF: Guia de Técnicas Avançadas\tpdf\n60183\tPDF: Guia de Gestão de Distrações\tpdf\n60186\tPDF: Guia de Visualização Aplicada\tpdf\n60189\tPDF: Guia de Ancoragem Mental\tpdf\n60192\tPDF: Guia de Rotinas de Preparação\tpdf\n60195\tPDF: Guia de Superação de Bloqueios\tpdf\n60198\tPDF: Guia de Mindset de Crescimento\tpdf\n60201\tPDF: Guia de Exercício Prático 1\tpdf\n60204\tPDF: Guia de Exercício Prático 2\tpdf\n60207\tPDF: Guia de Exercício de Consolidação 1\tpdf\n60210\tPDF: Guia de Exercício de Consolidação 2\tpdf\n60213\tPDF: Guia de Exercício de Consolidação 3\tpdf\n60216\tPDF: Guia de Exercício Final do Ciclo\tpdf\n60219\tPDF: Guia de Introdução ao Mestria Mental\tpdf\n60222\tPDF: Guia de Técnicas Essenciais\tpdf\n60225\tPDF: Guia de Prática Guiada\tpdf\n60228\tPDF: Guia de Aplicação no Treino\tpdf\n60231\tPDF: Guia de Integração Diária\tpdf\n60234\tPDF: Guia de Técnicas Avançadas\tpdf\n60237\tPDF: Guia de Gestão de Distrações\tpdf\n60240\tPDF: Guia de Visualização Aplicada\tpdf\n60243\tPDF: Guia de Ancoragem Mental\tpdf\n60246\tPDF: Guia de Rotinas de Preparação\tpdf\n60249\tPDF: Guia de Superação de Bloqueios\tpdf\n60252\tPDF: Guia de Mindset de Crescimento\tpdf\n60255\tPDF: Guia de Exercício Prático 1\tpdf\n60258\tPDF: Guia de Exercício Prático 2\tpdf\n60261\tPDF: Guia de Exercício de Consolidação 1\tpdf\n60264\tPDF: Guia de Exercício de Consolidação 2\tpdf\n60267\tPDF: Guia de Exercício de Consolidação 3\tpdf\n60270\tPDF: Guia de Exercício Final do Ciclo\tpdf\n60273\tPDF: Apresentação\ttext\n60276\tPDF: Como Funciona\ttext\n60279\tPDF: O Que Tens Acesso\ttext\n60282\tPDF: Primeiros Passos\ttext\n",
+  "stderr": "",
+  "execution_time_ms": 200
+}

@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import QuizPage from "./pages/QuizPage";
 import Setup from "./pages/Setup";
 import UnifiedDashboard from "./pages/UnifiedDashboard";
+import TextContent from "./pages/TextContent";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/cycle/:cycleId/week/:weekNumber"} component={WeekDetail} />
       <Route path={"/item/:id"} component={ItemDetail} />
       <Route path={"/content/:id"} component={ContentViewer} />
+      <Route path={"/text/:id"} component={TextContent} />
       <Route path={"/exercise/:id"} component={ExerciseViewer} />
       <Route path={"/quiz/:contentId"} component={QuizPage} />
       <Route path={"/dashboard"} component={Dashboard} />

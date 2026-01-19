@@ -124,6 +124,8 @@ export default function ItemDetail() {
                         if (!content.isAccessible) return;
                         if (content.type === 'quiz') {
                           setLocation(`/quiz/${content.id}`);
+                        } else if (content.type === 'text') {
+                          setLocation(`/text/${content.id}`);
                         } else {
                           setLocation(`/content/${content.id}`);
                         }

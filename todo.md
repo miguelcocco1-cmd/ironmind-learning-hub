@@ -259,3 +259,11 @@
 - [x] Criar PDF 4: Primeiros Passos (Guia de início)
 - [x] Adicionar PDFs aos conteúdos da Introdução na base de dados
 - [x] Testar visualização dos PDFs na plataforma
+
+## Substituir PDFs por Texto Formatado
+- [ ] Adicionar novo tipo "text" ao enum de conteúdos
+- [ ] Criar componente TextContent para mostrar texto formatado em quadro bonito
+- [ ] Converter conteúdo dos 4 PDFs para texto Markdown
+- [ ] Atualizar tipo dos 4 conteúdos da Introdução de "pdf" para "text"
+- [ ] Adicionar texto Markdown ao campo description dos conteúdos
+- [ ] Testar visualização do texto formatado
