@@ -112,6 +112,45 @@ export default function ItemDetail() {
               <div className="grid gap-4">
                 {contents.map((content) => {
                   const isCompleted = progressMap.get(content.id) || false;
+                  
+                  // Se for tipo 'text', exibir inline
+                  if (content.type === 'text') {
+                    return (
+                      <Card key={content.id} className="p-6 md:p-8 relative">
+                        {!content.isAccessible && (
+                          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 rounded-lg flex flex-col items-center justify-center">
+                            <Lock className="h-10 w-10 md:h-12 md:w-12 text-white/80 mb-2 md:mb-3" />
+                            <p className="text-base md:text-lg font-semibold text-white">Brevemente Disponível</p>
+                          </div>
+                        )}
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                            {content.title}
+                          </h3>
+                          {isCompleted && (
+                            <div className="text-green-600">
+                              <CheckCircle className="h-5 w-5 md:h-6 md:w-6" />
+                            </div>
+                          )}
+                        </div>
+                        <div 
+                          className="prose prose-invert max-w-none
+                            prose-headings:font-bold prose-headings:text-foreground
+                            prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8 first:prose-h1:mt-0
+                            prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-6
+                            prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-5
+                            prose-p:text-foreground/90 prose-p:leading-relaxed prose-p:mb-4
+                            prose-strong:text-foreground prose-strong:font-semibold
+                            prose-ul:my-4 prose-li:text-foreground/90 prose-li:mb-2
+                            prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic
+                            prose-hr:border-border prose-hr:my-8"
+                          dangerouslySetInnerHTML={{ __html: content.url }}
+                        />
+                      </Card>
+                    );
+                  }
+                  
+                  // Para outros tipos, manter comportamento de clique
                   return (
                     <Card
                       key={content.id}
@@ -124,8 +163,6 @@ export default function ItemDetail() {
                         if (!content.isAccessible) return;
                         if (content.type === 'quiz') {
                           setLocation(`/quiz/${content.id}`);
-                        } else if (content.type === 'text') {
-                          setLocation(`/text/${content.id}`);
                         } else {
                           setLocation(`/content/${content.id}`);
                         }
