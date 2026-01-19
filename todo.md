@@ -218,7 +218,7 @@
 - [ ] Implementar insights automáticos baseados em treino físico
 
 ## Implementação Strava OAuth (Real)
-- [ ] Adicionar STRAVA_CLIENT_ID e STRAVA_CLIENT_SECRET aos secrets
+- [x] Adicionar STRAVA_CLIENT_ID e STRAVA_CLIENT_SECRET aos secrets
 - [x] Criar router de integrações (server/integrations.ts)
 - [x] Implementar endpoint strava.getAuthUrl
 - [x] Implementar endpoint strava.handleCallback
