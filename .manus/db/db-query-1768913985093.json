@@ -1,0 +1,162 @@
+{
+  "query": "SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE cycleId = 30001 ORDER BY weekNumber LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE cycleId = 30001 ORDER BY weekNumber LIMIT 20;",
+  "rows": [
+    {
+      "id": "90001",
+      "cycleId": "30001",
+      "title": "Sessão de Hipnose: Fundação Mental",
+      "weekNumber": "0",
+      "weekGroup": "0",
+      "type": "topic"
+    },
+    {
+      "id": "30001",
+      "cycleId": "30001",
+      "title": "Identidade Mental IronMind",
+      "weekNumber": "1",
+      "weekGroup": "1",
+      "type": "topic"
+    },
+    {
+      "id": "30002",
+      "cycleId": "30001",
+      "title": "Introdução à Auto-Hipnose",
+      "weekNumber": "2",
+      "weekGroup": "1",
+      "type": "topic"
+    },
+    {
+      "id": "30003",
+      "cycleId": "30001",
+      "title": "Técnicas de Respiração",
+      "weekNumber": "3",
+      "weekGroup": "1",
+      "type": "topic"
+    },
+    {
+      "id": "30004",
+      "cycleId": "30001",
+      "title": "Relaxamento Progressivo",
+      "weekNumber": "4",
+      "weekGroup": "1",
+      "type": "topic"
+    },
+    {
+      "id": "30005",
+      "cycleId": "30001",
+      "title": "Conexão Mente-Corpo",
+      "weekNumber": "5",
+      "weekGroup": "1",
+      "type": "topic"
+    },
+    {
+      "id": "30006",
+      "cycleId": "30001",
+      "title": "Âncoras Mentais Básicas",
+      "weekNumber": "6",
+      "weekGroup": "2",
+      "type": "topic"
+    },
+    {
+      "id": "30007",
+      "cycleId": "30001",
+      "title": "Mantras e Afirmações",
+      "weekNumber": "7",
+      "weekGroup": "2",
+      "type": "topic"
+    },
+    {
+      "id": "30008",
+      "cycleId": "30001",
+      "title": "Psicologia Positiva",
+      "weekNumber": "8",
+      "weekGroup": "2",
+      "type": "topic"
+    },
+    {
+      "id": "30009",
+      "cycleId": "30001",
+      "title": "Estado de Transe Leve",
+      "weekNumber": "9",
+      "weekGroup": "2",
+      "type": "topic"
+    },
+    {
+      "id": "30010",
+      "cycleId": "30001",
+      "title": "Redução de Ruído Mental",
+      "weekNumber": "10",
+      "weekGroup": "2",
+      "type": "topic"
+    },
+    {
+      "id": "30011",
+      "cycleId": "30001",
+      "title": "Rotina Reset Pré-Treino",
+      "weekNumber": "11",
+      "weekGroup": "3",
+      "type": "topic"
+    },
+    {
+      "id": "30012",
+      "cycleId": "30001",
+      "title": "Diário de Treino Mental",
+      "weekNumber": "12",
+      "weekGroup": "3",
+      "type": "topic"
+    },
+    {
+      "id": "30013",
+      "cycleId": "30001",
+      "title": "Âncora de Calma Profunda",
+      "weekNumber": "13",
+      "weekGroup": "3",
+      "type": "exercise"
+    },
+    {
+      "id": "30014",
+      "cycleId": "30001",
+      "title": "5 Sentidos no Presente",
+      "weekNumber": "14",
+      "weekGroup": "3",
+      "type": "exercise"
+    },
+    {
+      "id": "30015",
+      "cycleId": "30001",
+      "title": "Respiração 4-7-8",
+      "weekNumber": "15",
+      "weekGroup": "4",
+      "type": "exercise"
+    },
+    {
+      "id": "30016",
+      "cycleId": "30001",
+      "title": "Auto-Hipnose Básica",
+      "weekNumber": "16",
+      "weekGroup": "4",
+      "type": "exercise"
+    },
+    {
+      "id": "30017",
+      "cycleId": "30001",
+      "title": "Body Scan",
+      "weekNumber": "17",
+      "weekGroup": "4",
+      "type": "exercise"
+    },
+    {
+      "id": "30018",
+      "cycleId": "30001",
+      "title": "Treino Perfeito",
+      "weekNumber": "18",
+      "weekGroup": "4",
+      "type": "exercise"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcycleId\ttitle\tweekNumber\tweekGroup\ttype\n90001\t30001\tSessão de Hipnose: Fundação Mental\t0\t0\ttopic\n30001\t30001\tIdentidade Mental IronMind\t1\t1\ttopic\n30002\t30001\tIntrodução à Auto-Hipnose\t2\t1\ttopic\n30003\t30001\tTécnicas de Respiração\t3\t1\ttopic\n30004\t30001\tRelaxamento Progressivo\t4\t1\ttopic\n30005\t30001\tConexão Mente-Corpo\t5\t1\ttopic\n30006\t30001\tÂncoras Mentais Básicas\t6\t2\ttopic\n30007\t30001\tMantras e Afirmações\t7\t2\ttopic\n30008\t30001\tPsicologia Positiva\t8\t2\ttopic\n30009\t30001\tEstado de Transe Leve\t9\t2\ttopic\n30010\t30001\tRedução de Ruído Mental\t10\t2\ttopic\n30011\t30001\tRotina Reset Pré-Treino\t11\t3\ttopic\n30012\t30001\tDiário de Treino Mental\t12\t3\ttopic\n30013\t30001\tÂncora de Calma Profunda\t13\t3\texercise\n30014\t30001\t5 Sentidos no Presente\t14\t3\texercise\n30015\t30001\tRespiração 4-7-8\t15\t4\texercise\n30016\t30001\tAuto-Hipnose Básica\t16\t4\texercise\n30017\t30001\tBody Scan\t17\t4\texercise\n30018\t30001\tTreino Perfeito\t18\t4\texercise\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

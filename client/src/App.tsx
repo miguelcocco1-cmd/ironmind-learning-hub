@@ -16,6 +16,7 @@ import QuizPage from "./pages/QuizPage";
 import Setup from "./pages/Setup";
 import UnifiedDashboard from "./pages/UnifiedDashboard";
 import TextContent from "./pages/TextContent";
+import Calendar from "./pages/Calendar";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -33,6 +34,7 @@ function Router() {
       <Route path={"/exercise/:id"} component={ExerciseViewer} />
       <Route path={"/quiz/:contentId"} component={QuizPage} />
       <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/calendar"} component={Calendar} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

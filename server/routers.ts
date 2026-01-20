@@ -59,6 +59,11 @@ listByCycle: publicProcedure
         return await db.getWeeksByCycleId(input.cycleId);
       }),
     
+    listAllLiveClasses: publicProcedure
+      .query(async () => {
+        return await db.getAllLiveClasses();
+      }),
+    
     getById: publicProcedure
       .input(z.object({ id: z.number() }))
       .query(async ({ input }) => {

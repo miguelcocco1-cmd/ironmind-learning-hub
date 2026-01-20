@@ -1,0 +1,9 @@
+{
+  "query": "\nSELECT c.id as cycleId, c.title as cycleTitle, w.id as weekId, w.weekGroup, w.title as weekTitle\nFROM cycles c\nJOIN weeks w ON w.cycleId = c.id\nWHERE w.type = 'live' AND c.`order` BETWEEN 1 AND 6\nORDER BY c.`order`, w.weekGroup;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute \nSELECT c.id as cycleId, c.title as cycleTitle, w.id as weekId, w.weekGroup, w.title as weekTitle\nFROM cycles c\nJOIN weeks w ON w.cycleId = c.id\nWHERE w.type = 'live' AND c.`order` BETWEEN 1 AND 6\nORDER BY c.`order`, w.weekGroup;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 60
+}

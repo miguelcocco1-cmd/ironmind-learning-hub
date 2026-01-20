@@ -1,0 +1,50 @@
+{
+  "query": "SELECT id, title, `order` FROM cycles ORDER BY `order`;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT id, title, `order` FROM cycles ORDER BY `order`;",
+  "rows": [
+    {
+      "id": "120001",
+      "title": "Setup: Configuração Inicial",
+      "order": "-1"
+    },
+    {
+      "id": "90001",
+      "title": "INTRODUÇÃO - Começar por Aqui",
+      "order": "0"
+    },
+    {
+      "id": "30001",
+      "title": "CICLO 1 - BASE: Fundação Mental",
+      "order": "1"
+    },
+    {
+      "id": "30002",
+      "title": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "order": "2"
+    },
+    {
+      "id": "30003",
+      "title": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "order": "3"
+    },
+    {
+      "id": "30004",
+      "title": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "order": "4"
+    },
+    {
+      "id": "30005",
+      "title": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "order": "5"
+    },
+    {
+      "id": "30006",
+      "title": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "order": "6"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\torder\n120001\tSetup: Configuração Inicial\t-1\n90001\tINTRODUÇÃO - Começar por Aqui\t0\n30001\tCICLO 1 - BASE: Fundação Mental\t1\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t2\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t3\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t4\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t5\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t6\n",
+  "stderr": "",
+  "execution_time_ms": 92
+}

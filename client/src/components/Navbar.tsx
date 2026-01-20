@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "wouter";
-import { Home, User } from "lucide-react";
+import { Home, User, Calendar } from "lucide-react";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -16,6 +16,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Início", icon: Home },
+    { href: "/calendar", label: "Calendário", icon: Calendar },
     { href: "/dashboard", label: "Meu Progresso", icon: User },
   ];
 

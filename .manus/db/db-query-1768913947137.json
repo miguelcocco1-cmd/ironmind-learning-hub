@@ -1,0 +1,58 @@
+{
+  "query": "\nSELECT c.id, c.title, c.`order`, \n       (SELECT COUNT(*) FROM weeks w WHERE w.cycleId = c.id AND w.type = 'live') as live_count\nFROM cycles c\nORDER BY c.`order`;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute \nSELECT c.id, c.title, c.`order`, \n       (SELECT COUNT(*) FROM weeks w WHERE w.cycleId = c.id AND w.type = 'live') as live_count\nFROM cycles c\nORDER BY c.`order`;\n",
+  "rows": [
+    {
+      "id": "120001",
+      "title": "Setup: Configuração Inicial",
+      "order": "-1",
+      "live_count": "0"
+    },
+    {
+      "id": "90001",
+      "title": "INTRODUÇÃO - Começar por Aqui",
+      "order": "0",
+      "live_count": "0"
+    },
+    {
+      "id": "30001",
+      "title": "CICLO 1 - BASE: Fundação Mental",
+      "order": "1",
+      "live_count": "0"
+    },
+    {
+      "id": "30002",
+      "title": "CICLO 2 - PERFORMANCE: Foco Intenso",
+      "order": "2",
+      "live_count": "0"
+    },
+    {
+      "id": "30003",
+      "title": "CICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade",
+      "order": "3",
+      "live_count": "0"
+    },
+    {
+      "id": "30004",
+      "title": "CICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima",
+      "order": "4",
+      "live_count": "0"
+    },
+    {
+      "id": "30005",
+      "title": "CICLO 5 - PRE-EVENT: Preparação para Prova",
+      "order": "5",
+      "live_count": "0"
+    },
+    {
+      "id": "30006",
+      "title": "CICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação",
+      "order": "6",
+      "live_count": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\torder\tlive_count\n120001\tSetup: Configuração Inicial\t-1\t0\n90001\tINTRODUÇÃO - Começar por Aqui\t0\t0\n30001\tCICLO 1 - BASE: Fundação Mental\t1\t0\n30002\tCICLO 2 - PERFORMANCE: Foco Intenso\t2\t0\n30003\tCICLO 3 - CONTROLO EMOCIONAL: Gestão de Ansiedade\t3\t0\n30004\tCICLO 4 - HYPNOSIS TRAINING: Força Mental Máxima\t4\t0\n30005\tCICLO 5 - PRE-EVENT: Preparação para Prova\t5\t0\n30006\tCICLO 6 - RACE WEEK + RECOVERY: Execução e Recuperação\t6\t0\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

@@ -276,3 +276,13 @@
 - [x] Integrar countdown na página do item (ItemDetail)
 - [x] Mostrar estados: "Falta X tempo" / "AO VIVO AGORA" / "Gravação disponível"
 - [x] Testar countdown com datas reais (Ciclo 1 com datas de exemplo)
+
+## Página de Calendário de Aulas ao Vivo
+- [x] Adicionar datas a todas as 24 aulas ao vivo (6 ciclos × 4 semanas)
+- [x] Criar página /calendar com vista de calendário
+- [x] Implementar filtros por ciclo (Todos / Ciclo 1-6)
+- [x] Mostrar countdown e estado de cada aula ("Falta Xd Yh Zm")
+- [x] Adicionar links diretos para as aulas (clicando no card)
+- [x] Adicionar link para calendário na navegação principal
+- [x] Criar endpoint tRPC listAllLiveClasses
+- [x] Testar visualização mensal (Janeiro-Julho 2026)

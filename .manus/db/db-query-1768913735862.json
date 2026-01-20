@@ -1,0 +1,45 @@
+{
+  "query": "SELECT cycleId, weekGroup, title, liveDate IS NOT NULL as has_date, liveDate FROM weeks WHERE type = 'live' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT cycleId, weekGroup, title, liveDate IS NOT NULL as has_date, liveDate FROM weeks WHERE type = 'live' LIMIT 5;",
+  "rows": [
+    {
+      "cycleId": "1",
+      "weekGroup": "1",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "has_date": "0",
+      "liveDate": "NULL"
+    },
+    {
+      "cycleId": "1",
+      "weekGroup": "2",
+      "title": "Aula 2 IRON MIND Training Lab",
+      "has_date": "0",
+      "liveDate": "NULL"
+    },
+    {
+      "cycleId": "1",
+      "weekGroup": "3",
+      "title": "Aula 3 IRON MIND Training Lab",
+      "has_date": "0",
+      "liveDate": "NULL"
+    },
+    {
+      "cycleId": "1",
+      "weekGroup": "4",
+      "title": "Aula 4 IRON MIND Training Lab",
+      "has_date": "0",
+      "liveDate": "NULL"
+    },
+    {
+      "cycleId": "2",
+      "weekGroup": "1",
+      "title": "Aula 5 IRON MIND Training Lab",
+      "has_date": "0",
+      "liveDate": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "cycleId\tweekGroup\ttitle\thas_date\tliveDate\n1\t1\tAula 1 IRON MIND Training Lab\t0\tNULL\n1\t2\tAula 2 IRON MIND Training Lab\t0\tNULL\n1\t3\tAula 3 IRON MIND Training Lab\t0\tNULL\n1\t4\tAula 4 IRON MIND Training Lab\t0\tNULL\n2\t1\tAula 5 IRON MIND Training Lab\t0\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

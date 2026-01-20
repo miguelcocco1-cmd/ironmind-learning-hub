@@ -154,6 +154,12 @@ export async function createWeek(week: InsertWeek) {
   return result;
 }
 
+export async function getAllLiveClasses() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(weeks).where(and(eq(weeks.type, "live"), eq(weeks.isPublished, true))).orderBy(asc(weeks.cycleId), asc(weeks.weekGroup));
+}
+
 // ============= CONTENT FUNCTIONS =============
 
 export async function getContentsByWeekId(weekId: number) {

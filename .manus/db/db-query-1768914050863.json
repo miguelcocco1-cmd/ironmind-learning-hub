@@ -1,0 +1,58 @@
+{
+  "query": "\n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'live' LIMIT 2)\nUNION ALL\n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'topic' LIMIT 2)\nUNION ALL\n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'exercise' LIMIT 2);\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute \n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'live' LIMIT 2)\nUNION ALL\n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'topic' LIMIT 2)\nUNION ALL\n(SELECT id, cycleId, title, weekNumber, weekGroup, type FROM weeks WHERE type = 'exercise' LIMIT 2);\n",
+  "rows": [
+    {
+      "id": "60001",
+      "cycleId": "1",
+      "title": "Aula 1 IRON MIND Training Lab",
+      "weekNumber": "0",
+      "weekGroup": "1",
+      "type": "live"
+    },
+    {
+      "id": "60002",
+      "cycleId": "1",
+      "title": "Aula 2 IRON MIND Training Lab",
+      "weekNumber": "0",
+      "weekGroup": "2",
+      "type": "live"
+    },
+    {
+      "id": "10005",
+      "cycleId": "90001",
+      "title": "Configuração Inicial",
+      "weekNumber": "5",
+      "weekGroup": "5",
+      "type": "topic"
+    },
+    {
+      "id": "10006",
+      "cycleId": "90001",
+      "title": "Grupo Telegram da Comunidade",
+      "weekNumber": "6",
+      "weekGroup": "6",
+      "type": "topic"
+    },
+    {
+      "id": "30013",
+      "cycleId": "30001",
+      "title": "Âncora de Calma Profunda",
+      "weekNumber": "13",
+      "weekGroup": "3",
+      "type": "exercise"
+    },
+    {
+      "id": "30014",
+      "cycleId": "30001",
+      "title": "5 Sentidos no Presente",
+      "weekNumber": "14",
+      "weekGroup": "3",
+      "type": "exercise"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcycleId\ttitle\tweekNumber\tweekGroup\ttype\n60001\t1\tAula 1 IRON MIND Training Lab\t0\t1\tlive\n60002\t1\tAula 2 IRON MIND Training Lab\t0\t2\tlive\n10005\t90001\tConfiguração Inicial\t5\t5\ttopic\n10006\t90001\tGrupo Telegram da Comunidade\t6\t6\ttopic\n30013\t30001\tÂncora de Calma Profunda\t13\t3\texercise\n30014\t30001\t5 Sentidos no Presente\t14\t3\texercise\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

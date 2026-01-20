@@ -1,0 +1,22 @@
+{
+  "query": "SELECT DISTINCT type, COUNT(*) as count FROM weeks GROUP BY type;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute SELECT DISTINCT type, COUNT(*) as count FROM weeks GROUP BY type;",
+  "rows": [
+    {
+      "type": "topic",
+      "count": "158"
+    },
+    {
+      "type": "live",
+      "count": "24"
+    },
+    {
+      "type": "exercise",
+      "count": "72"
+    }
+  ],
+  "messages": [],
+  "stdout": "type\tcount\ntopic\t158\nlive\t24\nexercise\t72\n",
+  "stderr": "",
+  "execution_time_ms": 85
+}
