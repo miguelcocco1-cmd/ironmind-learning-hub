@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LiveCountdown } from "@/components/LiveCountdown";
 import { trpc } from "@/lib/trpc";
 import { useLocation, useRoute } from "wouter";
 import { Loader2, ArrowLeft, Play, FileText, Headphones, CheckCircle, Lock } from "lucide-react";
@@ -84,10 +85,17 @@ export default function ItemDetail() {
 
         {/* Item Header */}
         <div className="mb-8 md:mb-12">
-          <div className="text-sm md:text-base text-muted-foreground mb-2">
-            {item.type === 'live' ? '🔴 AULA AO VIVO' : 
-             item.type === 'topic' ? `Tópico ${item.weekNumber}` : 
-             `Exercício ${item.weekNumber}`}
+          <div className="flex items-center justify-between gap-4 mb-2">
+            <div className="text-sm md:text-base text-muted-foreground">
+              {item.type === 'live' ? '🔴 AULA AO VIVO' : 
+               item.type === 'topic' ? `Tópico ${item.weekNumber}` : 
+               `Exercício ${item.weekNumber}`}
+            </div>
+            {item.type === 'live' && item.liveDate && (
+              <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <LiveCountdown liveDate={new Date(item.liveDate)} />
+              </div>
+            )}
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
             {item.title}

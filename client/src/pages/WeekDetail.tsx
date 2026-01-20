@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { ContentCard } from "@/components/ContentCard";
 import { Button } from "@/components/ui/button";
+import { LiveCountdown } from "@/components/LiveCountdown";
 import { trpc } from "@/lib/trpc";
 import { useLocation, useRoute } from "wouter";
 import { Loader2, ArrowLeft } from "lucide-react";
@@ -97,14 +98,21 @@ export default function WeekDetail() {
             
             return (
               <div key={item.id} className={isLive ? "sm:col-span-2 lg:col-span-3 xl:col-span-4" : ""}>
-                <ContentCard
-                  title={`${itemLabel}: ${item.title}`}
-                  thumbnail={thumbnail}
-                  isAccessible={isAccessible}
-                  area={item.area || undefined}
-                  onClick={() => setLocation(`/item/${item.id}`)}
-                  className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
-                />
+                <div className="relative">
+                  <ContentCard
+                    title={`${itemLabel}: ${item.title}`}
+                    thumbnail={thumbnail}
+                    isAccessible={isAccessible}
+                    area={item.area || undefined}
+                    onClick={() => setLocation(`/item/${item.id}`)}
+                    className={isLive ? "border-2 border-red-500 shadow-lg shadow-red-500/20" : ""}
+                  />
+                  {isLive && item.liveDate && (
+                    <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-2 rounded-lg">
+                      <LiveCountdown liveDate={new Date(item.liveDate)} />
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

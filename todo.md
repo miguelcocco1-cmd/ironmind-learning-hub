@@ -261,9 +261,18 @@
 - [x] Testar visualização dos PDFs na plataforma
 
 ## Substituir PDFs por Texto Formatado
-- [ ] Adicionar novo tipo "text" ao enum de conteúdos
-- [ ] Criar componente TextContent para mostrar texto formatado em quadro bonito
-- [ ] Converter conteúdo dos 4 PDFs para texto Markdown
-- [ ] Atualizar tipo dos 4 conteúdos da Introdução de "pdf" para "text"
-- [ ] Adicionar texto Markdown ao campo description dos conteúdos
-- [ ] Testar visualização do texto formatado
+- [x] Adicionar novo tipo "text" ao enum de conteúdos
+- [x] Criar componente TextContent para mostrar texto formatado em quadro bonito
+- [x] Converter conteúdo dos 4 PDFs para texto Markdown
+- [x] Atualizar tipo dos 4 conteúdos da Introdução de "pdf" para "text"
+- [x] Adicionar texto Markdown ao campo description dos conteúdos
+- [x] Testar visualização do texto formatado
+- [x] Exibir textos inline na página do item (junto com vídeo e áudio)
+
+## Countdown para Aulas ao Vivo
+- [x] Adicionar campo liveDate (timestamp) à tabela weeks
+- [x] Criar componente LiveCountdown reutilizável
+- [x] Integrar countdown na página de cada semana (WeekDetail)
+- [x] Integrar countdown na página do item (ItemDetail)
+- [x] Mostrar estados: "Falta X tempo" / "AO VIVO AGORA" / "Gravação disponível"
+- [x] Testar countdown com datas reais (Ciclo 1 com datas de exemplo)

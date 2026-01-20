@@ -1,0 +1,9 @@
+{
+  "query": "\n-- Aula ao vivo do Ciclo 1 Semana 1: daqui a 3 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 3 DAY) WHERE cycleId = 30001 AND weekGroup = 1 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 2: daqui a 10 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 10 DAY) WHERE cycleId = 30001 AND weekGroup = 2 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 3: daqui a 17 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 17 DAY) WHERE cycleId = 30001 AND weekGroup = 3 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 4: daqui a 24 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 24 DAY) WHERE cycleId = 30001 AND weekGroup = 4 AND type = 'live' LIMIT 1;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user i85uFKDwpvRSYau.be51874fae2b --database SDSD6dYMrjnK6khV9TAsBM --execute \n-- Aula ao vivo do Ciclo 1 Semana 1: daqui a 3 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 3 DAY) WHERE cycleId = 30001 AND weekGroup = 1 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 2: daqui a 10 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 10 DAY) WHERE cycleId = 30001 AND weekGroup = 2 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 3: daqui a 17 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 17 DAY) WHERE cycleId = 30001 AND weekGroup = 3 AND type = 'live' LIMIT 1;\n\n-- Aula ao vivo do Ciclo 1 Semana 4: daqui a 24 dias\nUPDATE weeks SET liveDate = DATE_ADD(NOW(), INTERVAL 24 DAY) WHERE cycleId = 30001 AND weekGroup = 4 AND type = 'live' LIMIT 1;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 73
+}
